@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Neon Prop Studio</title>
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
+    <style>
+        .page-hero {
+            min-height: 46vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: var(--nav-height);
+            background: url('https://images.unsplash.com/photo-1542332213-31f87348057f?auto=format&fit=crop&q=80&w=1920') center/cover;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(6, 10, 20, .65), rgba(6, 10, 20, .92));
+        }
+
+        [data-theme=light] .page-hero::before {
+            background: linear-gradient(to bottom, rgba(240, 244, 255, .55), rgba(240, 244, 255, .88));
+        }
+
+        .page-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .team-img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+        }
+
+        .milestone-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--grad-primary);
+            flex-shrink: 0;
+            box-shadow: 0 0 10px var(--primary-glow);
+        }
+
+        @media(max-width:767.98px) {
+            .page-hero {
+                min-height: 34vh;
+            }
+
+            .team-img {
+                height: 220px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top"><i
+            class="bi bi-chevron-up"></i></button>
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand o-font fw-bold" href="../index.html">
+                <img src="../assets/images/logo.svg" alt="Neon Prop Studio" height="44" class="d-block"
+                    style="max-width:180px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent"
+                aria-expanded="false" aria-label="Toggle navigation"><i class="bi bi-list fs-2 text-neon"></i></button>
+            <div class="collapse navbar-collapse" id="navContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../home2.html">Discover</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="showcase.html">Showcase</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-3">
+                    <a href="login.html" class="btn-login text-decoration-none d-none d-lg-inline-block">Sign In</a>
+                    <a href="signup.html" class="btn btn-premium btn-sm">Join Studio</a>
+                    <button id="theme-toggle" class="btn btn-theme-toggle" aria-label="Toggle Theme"><i
+                            class="bi bi-sun-fill"></i></button>
+                    <button id="rtl-toggle" class="btn btn-link text-neon fw-bold px-1"
+                        style="font-size:.8rem;letter-spacing:1px;" aria-label="Toggle RTL">RTL</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <section class="page-hero">
+            <div class="container text-center">
+                <div class="chip mb-3 mx-auto reveal"
+                    style="width:fit-content;background:rgba(0,242,255,.12);border-color:rgba(0,242,255,.25);">Who We
+                    Are</div>
+                <h1 class="reveal delay-1"
+                    style="font-family:'Outfit',sans-serif;font-weight:900;font-size:clamp(2.2rem,5vw,3.8rem);color:var(--text-main);margin-bottom:1rem;">
+                    Our <span
+                        style="background:var(--grad-neon);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Story</span>
+                </h1>
+                <p class="col-lg-6 mx-auto reveal delay-2" style="color:var(--text-subtle);font-size:1.05rem;">Born
+                    from a passion for anime and the art of making the fictional real.</p>
+            </div>
+        </section>
+
+        <!-- Origin Story -->
+        <section class="section-py">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6 reveal-left">
+                        <div class="chip mb-3"><i class="bi bi-book"></i> Origin</div>
+                        <h2 class="section-title mb-4">Founded in<br><span class="gradient-text">A Bedroom
+                                Workshop</span></h2>
+                        <p class="text-muted lead mb-4">Neon Prop Studio began in 2019 when founder Kenji
+                            Mori—frustrated with the lack of high-quality anime props on the market—3D-printed his first
+                            Gundam sword in a 10x10 bedroom studio. Word spread at Anime Expo 2020, and by 2022, the
+                            studio had a team of 12 dedicated smiths.</p>
+                        <p class="text-muted mb-4">What started as a passion project became a global workshop shipping
+                            to 15+ countries, producing 500+ props, and building a community of 12,000+ cosplay
+                            enthusiasts who push the boundaries of what's possible.</p>
+                        <a href="contact.html" class="btn btn-neon">Join Our Community</a>
+                    </div>
+                    <div class="col-lg-6 reveal-right">
+                        <img src="https://images.unsplash.com/photo-1542332213-31f87348057f?auto=format&fit=crop&q=80&w=900"
+                            alt="Workshop origin story" class="img-fluid rounded-4 shadow-lg"
+                            style="height:440px;object-fit:cover;width:100%;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values -->
+        <section class="section-py bg-alt">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <div class="chip mb-3 reveal"><i class="bi bi-bullseye"></i> Methodology</div>
+                    <h2 class="section-title reveal delay-1">Three Forge Pillars</h2>
+                    <p class="section-subtitle reveal delay-2">The core values that guide every single commission.</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-4 reveal">
+                        <div class="glass-card h-100 text-center py-5 px-4">
+                            <div class="feature-icon-wrap mb-4"
+                                style="width:72px;height:72px;border-radius:20px;background:var(--grad-primary);display:flex;align-items:center;justify-content:center;font-size:2rem;color:white;box-shadow:0 8px 24px var(--primary-glow);margin:0 auto 1.5rem;">
+                                <i class="bi bi-lightbulb-fill"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3">Innovation</h4>
+                            <p class="text-muted">We push the boundaries of what's buildable—integrating IoT, reactive
+                                LEDs, OLED panels, and articulated joints into props that feel like they crossed
+                                dimensions.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 reveal delay-1">
+                        <div class="glass-card h-100 text-center py-5 px-4" style="border-color:var(--primary-neon);">
+                            <div class="feature-icon-wrap mb-4"
+                                style="width:72px;height:72px;border-radius:20px;background:var(--grad-secondary);display:flex;align-items:center;justify-content:center;font-size:2rem;color:white;box-shadow:0 8px 24px rgba(6,182,212,.3);margin:0 auto 1.5rem;">
+                                <i class="bi bi-patch-check-fill"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3">Precision</h4>
+                            <p class="text-muted">Every millimeter matters. We obsess over source material, using
+                                photogrammetry and 3D scanning to achieve 1:1 accuracy before a single gram of resin is
+                                printed.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 reveal delay-2">
+                        <div class="glass-card h-100 text-center py-5 px-4">
+                            <div class="feature-icon-wrap mb-4"
+                                style="width:72px;height:72px;border-radius:20px;background:var(--grad-warm);display:flex;align-items:center;justify-content:center;font-size:2rem;color:white;box-shadow:0 8px 24px rgba(245,158,11,.25);margin:0 auto 1.5rem;">
+                                <i class="bi bi-people-fill"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3">Community</h4>
+                            <p class="text-muted">We're a community-first studio. From Discord design sessions to free
+                                blueprint drops, we believe the best props are made together, not in isolation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team -->
+        <section class="section-py">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <div class="chip mb-3 reveal"><i class="bi bi-person-badge"></i> The Smiths</div>
+                    <h2 class="section-title reveal delay-1">Meet The Team</h2>
+                    <p class="section-subtitle reveal delay-2">A crew of obsessive craftspeople, engineers, and cosplay
+                        veterans.</p>
+                </div>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-sm-6 col-lg-3 reveal">
+                        <div class="glass-card p-0 overflow-hidden h-100">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&h=300&q=80"
+                                class="team-img" alt="Kenji Mori — Founder">
+                            <div class="p-4">
+                                <h5 class="fw-bold mb-1">Kenji Mori</h5>
+                                <p class="text-neon fw-bold small mb-2"
+                                    style="font-size:.8rem;text-transform:uppercase;letter-spacing:1px;">Founder &amp;
+                                    Lead Smith</p>
+                                <p class="text-muted small">5+ years specializing in IoT integrations and large-format
+                                    resin printing for anime replicas.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3 reveal delay-1">
+                        <div class="glass-card p-0 overflow-hidden h-100">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&h=300&q=80"
+                                class="team-img" alt="Lyra Chen — Armor Specialist">
+                            <div class="p-4">
+                                <h5 class="fw-bold mb-1">Lyra Chen</h5>
+                                <p class="text-neon fw-bold small mb-2"
+                                    style="font-size:.8rem;text-transform:uppercase;letter-spacing:1px;">Armor
+                                    Specialist</p>
+                                <p class="text-muted small">EVA foam and carbon fiber architecture, specializing in
+                                    wearable armor with articulated joints.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3 reveal delay-2">
+                        <div class="glass-card p-0 overflow-hidden h-100">
+                            <img src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?auto=format&fit=crop&w=400&h=300&q=80"
+                                class="team-img" alt="Marcus Volt — Electronics Lead">
+                            <div class="p-4">
+                                <h5 class="fw-bold mb-1">Marcus Volt</h5>
+                                <p class="text-neon fw-bold small mb-2"
+                                    style="font-size:.8rem;text-transform:uppercase;letter-spacing:1px;">Electronics
+                                    Lead</p>
+                                <p class="text-muted small">Reactive LED systems, Bluetooth integration, and custom
+                                    motor controllers for motorized props.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3 reveal delay-3">
+                        <div class="glass-card p-0 overflow-hidden h-100">
+                            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=400&h=300&q=80"
+                                class="team-img" alt="Riku Sato — Paint Master">
+                            <div class="p-4">
+                                <h5 class="fw-bold mb-1">Riku Sato</h5>
+                                <p class="text-neon fw-bold small mb-2"
+                                    style="font-size:.8rem;text-transform:uppercase;letter-spacing:1px;">Paint Master
+                                </p>
+                                <p class="text-muted small">Automotive-grade finishing and multi-layer weathering that
+                                    makes every piece look battle-worn.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Milestones -->
+        <section class="section-py bg-alt-trigger">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6 reveal-left">
+                        <div class="chip mb-3"><i class="bi bi-bar-chart-steps"></i> History</div>
+                        <h2 class="section-title mb-5">Studio Milestones</h2>
+                        <div class="d-flex gap-4 mb-4">
+                            <div class="d-flex flex-column align-items-center gap-3">
+                                <div class="milestone-dot"></div>
+                                <div
+                                    style="width:2px;flex:1;background:linear-gradient(to bottom,var(--primary-neon),transparent);min-height:40px;">
+                                </div>
+                                <div class="milestone-dot"></div>
+                                <div
+                                    style="width:2px;flex:1;background:linear-gradient(to bottom,var(--primary-neon),transparent);min-height:40px;">
+                                </div>
+                                <div class="milestone-dot"></div>
+                                <div
+                                    style="width:2px;flex:1;background:linear-gradient(to bottom,var(--primary-neon),transparent);min-height:40px;">
+                                </div>
+                                <div class="milestone-dot"></div>
+                            </div>
+                            <div class="flex-grow-1">
+                                <div class="glass-card mb-3 py-3 px-4">
+                                    <h6 class="fw-bold mb-1">2019 — First Sword</h6>
+                                    <p class="text-muted small mb-0">Kenji builds the first Gundam katana in a bedroom
+                                        studio, sparking everything.</p>
+                                </div>
+                                <div class="glass-card mb-3 py-3 px-4">
+                                    <h6 class="fw-bold mb-1">2020 — AX Debut</h6>
+                                    <p class="text-muted small mb-0">First commission accepted at Anime Expo. 3
+                                        commissions turn into 30 in 60 days.</p>
+                                </div>
+                                <div class="glass-card mb-3 py-3 px-4">
+                                    <h6 class="fw-bold mb-1">2022 — Team of 12</h6>
+                                    <p class="text-muted small mb-0">First dedicated studio space and a full team of
+                                        craftspeople, engineers, and artists.</p>
+                                </div>
+                                <div class="glass-card py-3 px-4">
+                                    <h6 class="fw-bold mb-1">2026 — 15 Countries</h6>
+                                    <p class="text-muted small mb-0">Shipping worldwide, 500+ props shipped, and 12,000+
+                                        community members strong.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 reveal-right">
+                        <div class="row g-3">
+                            <div class="col-6">
+                                <div class="glass-card text-center py-4">
+                                    <div class="stat-number" data-target="500">500</div>
+                                    <p class="text-muted fw-bold mb-0"
+                                        style="font-size:.82rem;text-transform:uppercase;letter-spacing:1px;">Props
+                                        Forged</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="glass-card text-center py-4">
+                                    <div class="stat-number" data-target="12000">12k+</div>
+                                    <p class="text-muted fw-bold mb-0"
+                                        style="font-size:.82rem;text-transform:uppercase;letter-spacing:1px;">Members
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="glass-card text-center py-4">
+                                    <div class="stat-number" data-target="99">99%</div>
+                                    <p class="text-muted fw-bold mb-0"
+                                        style="font-size:.82rem;text-transform:uppercase;letter-spacing:1px;">Love Rate
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="glass-card text-center py-4">
+                                    <div class="stat-number" data-target="15">15</div>
+                                    <p class="text-muted fw-bold mb-0"
+                                        style="font-size:.82rem;text-transform:uppercase;letter-spacing:1px;">Countries
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Arsenal -->
+        <section class="section-py bg-alt">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <div class="chip mb-3 reveal"><i class="bi bi-cpu"></i> Tech</div>
+                    <h2 class="section-title reveal delay-1">Technology Arsenal</h2>
+                    <p class="section-subtitle reveal delay-2">The industrial-grade equipment we use to bring extreme
+                        precision to every build.</p>
+                </div>
+                <div class="row g-3 justify-content-center">
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2 reveal">
+                        <div class="glass-card text-center py-3 px-2"><i
+                                class="bi bi-printer-fill text-neon d-block mb-2" style="font-size:1.5rem;"></i><small
+                                class="fw-bold">8K SLA Printer</small></div>
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2 reveal delay-1">
+                        <div class="glass-card text-center py-3 px-2"><i class="bi bi-phone-fill text-neon d-block mb-2"
+                                style="font-size:1.5rem;"></i><small class="fw-bold">3D Scanner</small></div>
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2 reveal delay-2">
+                        <div class="glass-card text-center py-3 px-2"><i
+                                class="bi bi-lightbulb-fill text-neon d-block mb-2" style="font-size:1.5rem;"></i><small
+                                class="fw-bold">CNC Router</small></div>
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2 reveal delay-3">
+                        <div class="glass-card text-center py-3 px-2"><i
+                                class="bi bi-trophy-fill text-neon d-block mb-2" style="font-size:1.5rem;"></i><small
+                                class="fw-bold">Automotive Booth</small></div>
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2 reveal delay-4">
+                        <div class="glass-card text-center py-3 px-2"><i class="bi bi-hdd-fill text-neon d-block mb-2"
+                                style="font-size:1.5rem;"></i><small class="fw-bold">ZBrush Studio</small></div>
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2 reveal delay-5">
+                        <div class="glass-card text-center py-3 px-2"><i class="bi bi-gear-fill text-neon d-block mb-2"
+                                style="font-size:1.5rem;"></i><small class="fw-bold">IoT Lab</small></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer py-5 mt-4">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6">
+                    <a href="index.html" class="text-decoration-none d-inline-block mb-3">
+                        <img src="assets/images/logo.svg" alt="Neon Prop Studio" height="52" style="max-width:200px;">
+                    </a>
+                    <p class="text-muted mb-4" style="font-size:0.95rem;">Elevating the art of cosplay craftsmanship
+                        through innovation and dedication. Your vision, forged into reality—one artifact at a time.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="btn btn-theme-toggle" aria-label="Instagram"><i
+                                class="bi bi-instagram"></i></a>
+                        <a href="#" class="btn btn-theme-toggle" aria-label="Twitter"><i
+                                class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="btn btn-theme-toggle" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                        <a href="#" class="btn btn-theme-toggle" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <h6 class="fw-bold mb-4 text-uppercase" style="letter-spacing:1px;font-size:0.82rem;">Explore</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><a href="about.html" class="footer-link">Our Story</a></li>
+                        <li class="mb-3"><a href="services.html" class="footer-link">Methods</a></li>
+                        <li class="mb-3"><a href="showcase.html" class="footer-link">Gallery</a></li>
+                        <li class="mb-3"><a href="home2.html" class="footer-link">Discover</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <h6 class="fw-bold mb-4 text-uppercase" style="letter-spacing:1px;font-size:0.82rem;">Support</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><a href="contact.html" class="footer-link">Contact Us</a></li>
+                        <li class="mb-3"><a href="contact.html#faq" class="footer-link">FAQ</a></li>
+                        <li class="mb-3"><a href="https://etsy.com" class="footer-link" target="_blank">Etsy Shop</a>
+                        </li>
+                        <li class="mb-3"><a href="coming-soon.html" class="footer-link">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <h6 class="fw-bold mb-4 text-uppercase" style="letter-spacing:1px;font-size:0.82rem;">Newsletter
+                    </h6>
+                    <p class="text-muted mb-3" style="font-size:0.9rem;">Get notified about batch drops, limited
+                        releases, and new prop designs.</p>
+                    <form class="needs-validation" novalidate>
+                        <div class="d-flex gap-2">
+                            <input type="email" class="form-control-premium form-control flex-grow-1"
+                                placeholder="your@email.com" required aria-label="Email address">
+                            <button class="btn btn-neon px-3" type="submit"
+                                style="border-radius:var(--border-radius-sm);white-space:nowrap;">Join</button>
+                        </div>
+                    </form>
+                    <p class="text-muted mt-2" style="font-size:0.78rem;">No spam. Unsubscribe anytime.</p>
+                </div>
+            </div>
+            <hr class="divider-gradient my-5">
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 text-muted"
+                style="font-size:0.85rem;">
+                <p class="mb-0">&copy; 2026 Neon Prop Studio. All rights reserved.</p>
+                <div class="d-flex gap-4">
+                    <a href="#" class="footer-link" style="font-size:0.85rem;">Privacy</a>
+                    <a href="#" class="footer-link" style="font-size:0.85rem;">Terms</a>
+                    <a href="#" class="footer-link" style="font-size:0.85rem;">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="authToast" class="toast align-items-center text-white border-0" role="alert" aria-live="assertive"
+            aria-atomic="true" style="background:var(--grad-primary);">
+            <div class="d-flex">
+                <div class="toast-body" id="toastMessage">Welcome!</div><button type="button"
+                    class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/auth.js"></script>
+</body>
+
+</html>

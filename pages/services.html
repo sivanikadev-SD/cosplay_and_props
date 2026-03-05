@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Neon Prop Studio</title>
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
+    <style>
+        .page-hero {
+            min-height: 48vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: var(--nav-height);
+            background: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1920') center/cover;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(6, 10, 20, .7), rgba(6, 10, 20, .93));
+        }
+
+        [data-theme=light] .page-hero::before {
+            background: linear-gradient(to bottom, rgba(240, 244, 255, .6), rgba(240, 244, 255, .9));
+        }
+
+        .page-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .svc-icon {
+            width: 54px;
+            height: 54px;
+            border-radius: 14px;
+            background: var(--grad-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: #fff;
+            box-shadow: 0 6px 18px var(--primary-glow);
+            margin-bottom: 1rem;
+            transition: var(--transition-smooth);
+        }
+
+        .glass-card:hover .svc-icon {
+            transform: scale(1.12) rotate(-6deg);
+        }
+
+        .pricing-card {
+            background: var(--bg-card);
+            border: 2px solid var(--border-color);
+            border-radius: var(--border-radius-lg);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--primary-neon);
+        }
+
+        .pricing-card.featured::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--grad-primary);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-glow), var(--shadow-lg);
+        }
+
+        .pricing-price {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 900;
+            font-size: 2.6rem;
+            background: var(--grad-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .faq-item {
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-md);
+            margin-bottom: .875rem;
+            overflow: hidden;
+            transition: border-color .2s;
+        }
+
+        .faq-item:hover {
+            border-color: var(--border-accent);
+        }
+
+        .faq-btn {
+            background: transparent;
+            border: none;
+            padding: 1.2rem 1.5rem;
+            width: 100%;
+            text-align: left;
+            font-weight: 700;
+            color: var(--text-main);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+            font-size: .96rem;
+        }
+
+        .faq-btn i {
+            color: var(--primary-neon);
+            transition: transform .3s;
+            flex-shrink: 0;
+        }
+
+        .faq-btn[aria-expanded=true] i {
+            transform: rotate(45deg);
+        }
+
+        .faq-body {
+            padding: 0 1.5rem 1.2rem;
+            color: var(--text-muted);
+            font-size: .93rem;
+            line-height: 1.8;
+        }
+
+        @media(max-width:767.98px) {
+            .page-hero {
+                min-height: 36vh;
+            }
+
+            .pricing-price {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top"><i
+            class="bi bi-chevron-up"></i></button>
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand o-font fw-bold" href="../index.html">
+                <img src="../assets/images/logo.svg" alt="Neon Prop Studio" height="44" class="d-block"
+                    style="max-width:180px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent"
+                aria-expanded="false" aria-label="Toggle navigation"><i class="bi bi-list fs-2 text-neon"></i></button>
+            <div class="collapse navbar-collapse" id="navContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../home2.html">Discover</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="showcase.html">Showcase</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-3">
+                    <a href="login.html" class="btn-login text-decoration-none d-none d-lg-inline-block">Sign In</a>
+                    <a href="signup.html" class="btn btn-premium btn-sm">Join Studio</a>
+                    <button id="theme-toggle" class="btn btn-theme-toggle" aria-label="Toggle Theme"><i
+                            class="bi bi-sun-fill"></i></button>
+                    <button id="rtl-toggle" class="btn btn-link text-neon fw-bold px-1"
+                        style="font-size:.8rem;letter-spacing:1px;" aria-label="Toggle RTL">RTL</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <!-- Hero -->
+        <section class="page-hero">
+            <div class="container text-center">
+                <div class="chip mb-3 mx-auto reveal" style="width:fit-content;">What We Offer</div>
+                <h1 class="reveal delay-1"
+                    style="font-family:'Outfit',sans-serif;font-weight:900;font-size:clamp(2.2rem,5vw,3.8rem);color:white;margin-bottom:1rem;">
+                    Forge <span
+                        style="background:var(--grad-neon);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Capabilities</span>
+                </h1>
+                <p class="col-lg-6 mx-auto reveal delay-2" style="color:rgba(255,255,255,.7);font-size:1.05rem;">
+                    Lightweight, safe, and convention-friendly artifacts powered by cutting-edge fabrication technology.
+                </p>
+            </div>
+        </section>
+
+        <!-- Services Grid -->
+        <section class="section-py">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-sm-6 col-lg-4 reveal">
+                        <div class="glass-card h-100">
+                            <div class="svc-icon"><i class="bi bi-lightning-charge-fill"></i></div>
+                            <h5 class="fw-bold mb-2">Anime Swords</h5>
+                            <p class="text-muted small">Katana, fantasy blades, and legendary steel with carbon cores,
+                                high-detail resin, and convention-safe safety certification.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4 reveal delay-1">
+                        <div class="glass-card h-100">
+                            <div class="svc-icon"><i class="bi bi-shield-fill"></i></div>
+                            <h5 class="fw-bold mb-2">Armor Pieces</h5>
+                            <p class="text-muted small">Custom chest plates, shoulder guards, and full-body armor from
+                                EVA foam and 3D-printed hard shell materials.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4 reveal delay-2">
+                        <div class="glass-card h-100">
+                            <div class="svc-icon"><i class="bi bi-magic"></i></div>
+                            <h5 class="fw-bold mb-2">Magic Accessories</h5>
+                            <p class="text-muted small">Crowns, staffs, wands, and mystic artifacts built for all-day
+                                comfort during long convention marathons.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4 reveal delay-3">
+                        <div class="glass-card h-100">
+                            <div class="svc-icon"><i class="bi bi-controller"></i></div>
+                            <h5 class="fw-bold mb-2">Game Replicas</h5>
+                            <p class="text-muted small">Screen-accurate replicas of iconic items from Apex Legends,
+                                Valorant, Genshin Impact, Elden Ring &amp; more.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4 reveal delay-4">
+                        <div class="glass-card h-100">
+                            <div class="svc-icon"><i class="bi bi-film"></i></div>
+                            <h5 class="fw-bold mb-2">Movie Props</h5>
+                            <p class="text-muted small">Sci-fi and fantasy pieces crafted for cinematic accuracy,
+                                professional photo sessions, and film production.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4 reveal delay-5">
+                        <div class="glass-card h-100">
+                            <div class="svc-icon"><i class="bi bi-cpu"></i></div>
+                            <h5 class="fw-bold mb-2">LED &amp; Electronics</h5>
+                            <p class="text-muted small">Reactive RGB systems, Bluetooth control, heartbeat sync LEDs,
+                                and full IoT integration in any prop.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4 reveal">
+                        <div class="glass-card h-100">
+                            <div class="svc-icon"><i class="bi bi-hammer"></i></div>
+                            <h5 class="fw-bold mb-2">Custom Weaponry</h5>
+                            <p class="text-muted small">From daggers to 8ft cannons—lightweight, durable, con-safe
+                                weapons with intricate hand-finished detailing.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4 reveal delay-1">
+                        <div class="glass-card h-100">
+                            <div class="svc-icon"><i class="bi bi-gem"></i></div>
+                            <h5 class="fw-bold mb-2">Collector Replicas</h5>
+                            <p class="text-muted small">Museum-quality display replicas in custom padded cases with
+                                authenticity certificate and build documentation.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4 reveal delay-2">
+                        <div class="glass-card h-100">
+                            <div class="svc-icon"><i class="bi bi-wrench-adjustable"></i></div>
+                            <h5 class="fw-bold mb-2">Prop Repair</h5>
+                            <p class="text-muted small">Restore worn-out props with our full repair, repaint, LED
+                                upgrade, and structural reinforcement service.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process -->
+        <section class="section-py bg-alt">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <div class="chip mb-3 reveal"><i class="bi bi-diagram-3"></i> Workflow</div>
+                    <h2 class="section-title reveal delay-1">The 6-Step Forge</h2>
+                    <p class="section-subtitle reveal delay-2">Our battle-tested pipeline, from first sketch to your
+                        front door.</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-sm-6 col-lg-4 reveal">
+                        <div class="glass-card h-100">
+                            <div class="d-flex align-items-center gap-3 mb-3"><span
+                                    style="font-family:'Outfit',sans-serif;font-weight:900;font-size:2.2rem;color:var(--primary-neon);line-height:1;">01</span>
+                                <h5 class="fw-bold mb-0">Blueprint</h5>
+                            </div>
+                            <p class="text-muted small">Full 2D projection before any work begins. We capture size,
+                                weight, and every key visual feature.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4 reveal delay-1">
+                        <div class="glass-card h-100">
+                            <div class="d-flex align-items-center gap-3 mb-3"><span
+                                    style="font-family:'Outfit',sans-serif;font-weight:900;font-size:2.2rem;color:var(--primary-neon);line-height:1;">02</span>
+                                <h5 class="fw-bold mb-0">3D Modeling</h5>
+                            </div>
+                            <p class="text-muted small">ZBrush &amp; Blender digital sculpting with integrated routing
+                                for internal electronics and structural supports.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4 reveal delay-2">
+                        <div class="glass-card h-100">
+                            <div class="d-flex align-items-center gap-3 mb-3"><span
+                                    style="font-family:'Outfit',sans-serif;font-weight:900;font-size:2.2rem;color:var(--primary-neon);line-height:1;">03</span>
+                                <h5 class="fw-bold mb-0">Precision Print</h5>
+                            </div>
+                            <p class="text-muted small">8K SLA resin for ultra-fine details, industrial Hyper-PLA for
+                                core structural components.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4 reveal delay-3">
+                        <div class="glass-card h-100">
+                            <div class="d-flex align-items-center gap-3 mb-3"><span
+                                    style="font-family:'Outfit',sans-serif;font-weight:900;font-size:2.2rem;color:var(--primary-neon);line-height:1;">04</span>
+                                <h5 class="fw-bold mb-0">Assembly</h5>
+                            </div>
+                            <p class="text-muted small">Carbon fiber &amp; aluminum internal structures fused with
+                                industrial bonding agents for maximum durability.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4 reveal delay-4">
+                        <div class="glass-card h-100">
+                            <div class="d-flex align-items-center gap-3 mb-3"><span
+                                    style="font-family:'Outfit',sans-serif;font-weight:900;font-size:2.2rem;color:var(--primary-neon);line-height:1;">05</span>
+                                <h5 class="fw-bold mb-0">Master Painting</h5>
+                            </div>
+                            <p class="text-muted small">Automotive-grade paints, multi-layer weathering, and UV-stable
+                                clear coat for a studio-quality finish.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4 reveal delay-5">
+                        <div class="glass-card h-100">
+                            <div class="d-flex align-items-center gap-3 mb-3"><span
+                                    style="font-family:'Outfit',sans-serif;font-weight:900;font-size:2.2rem;color:var(--primary-neon);line-height:1;">06</span>
+                                <h5 class="fw-bold mb-0">Delivery</h5>
+                            </div>
+                            <p class="text-muted small">Stress-tested, photographed, packed in a padded custom case.
+                                Tracked &amp; insured worldwide shipping.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Materials Lab -->
+        <section class="section-py">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6 reveal-left">
+                        <div class="chip mb-3"><i class="bi bi-grid-fill"></i> Materials Lab</div>
+                        <h2 class="section-title mb-4">Material Quality</h2>
+                        <p class="text-muted lead mb-4">We source industrial-grade polymers and aerospace alloys to
+                            ensure your prop stands the test of time, impact, and insanity.</p>
+                        <div class="row g-3">
+                            <div class="col-6">
+                                <div class="glass-card p-3">
+                                    <h6 class="text-neon fw-bold mb-1">Flexi-Resin</h6>
+                                    <p class="small text-muted mb-0">8K impact-resistant resin for helmets</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="glass-card p-3">
+                                    <h6 class="text-neon fw-bold mb-1">Hyper-PLA</h6>
+                                    <p class="small text-muted mb-0">High-temp structural rigidity for blades</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="glass-card p-3">
+                                    <h6 class="text-neon fw-bold mb-1">Carbon Fiber</h6>
+                                    <p class="small text-muted mb-0">Ultra-light internal reinforcement</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="glass-card p-3">
+                                    <h6 class="text-neon fw-bold mb-1">Automotive Paint</h6>
+                                    <p class="small text-muted mb-0">Scratch-proof UV-stable metallic finishes</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 reveal-right">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=900"
+                            alt="Materials Lab" class="img-fluid rounded-4"
+                            style="height:440px;object-fit:cover;width:100%;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing -->
+        <section id="pricing" class="section-py bg-alt">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <div class="chip mb-3 reveal"><i class="bi bi-tags"></i> Pricing</div>
+                    <h2 class="section-title reveal delay-1">Commission Tiers</h2>
+                    <p class="section-subtitle reveal delay-2">All tiers include convention-safe certification and
+                        insured worldwide shipping.</p>
+                </div>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-6 col-lg-4 reveal">
+                        <div class="pricing-card h-100">
+                            <span class="chip mb-4 d-inline-block">Master Grade</span>
+                            <div class="pricing-price mb-1">$500<span style="font-size:1rem;opacity:.6">+</span></div>
+                            <p class="text-muted small mb-4">4-Week Build</p>
+                            <ul class="list-unstyled text-start mb-5">
+                                <li class="d-flex gap-2 mb-3"><i
+                                        class="bi bi-check-circle-fill text-neon flex-shrink-0 mt-1"></i><span
+                                        class="text-muted">High-detail 8K resin printing</span></li>
+                                <li class="d-flex gap-2 mb-3"><i
+                                        class="bi bi-check-circle-fill text-neon flex-shrink-0 mt-1"></i><span
+                                        class="text-muted">Static LED accent lighting</span></li>
+                                <li class="d-flex gap-2 mb-3"><i
+                                        class="bi bi-check-circle-fill text-neon flex-shrink-0 mt-1"></i><span
+                                        class="text-muted">Automotive base coat paint</span></li>
+                                <li class="d-flex gap-2"><i
+                                        class="bi bi-check-circle-fill text-neon flex-shrink-0 mt-1"></i><span
+                                        class="text-muted">Convention safety certificate</span></li>
+                            </ul>
+                            <a href="contact.html" class="btn btn-outline-premium w-100">Get Quote</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 reveal delay-1">
+                        <div class="pricing-card featured h-100">
+                            <div class="badge-neon mb-3 d-inline-block">MOST POPULAR</div>
+                            <div class="d-block mb-4"><span class="chip">Perfect Grade</span></div>
+                            <div class="pricing-price mb-1">$1,200<span style="font-size:1rem;opacity:.6">+</span></div>
+                            <p class="text-muted small mb-4">6-Week Build · Priority Queue</p>
+                            <ul class="list-unstyled text-start mb-5">
+                                <li class="d-flex gap-2 mb-3"><i
+                                        class="bi bi-check-circle-fill text-neon flex-shrink-0 mt-1"></i><span
+                                        class="text-muted">Carbon fiber internal core</span></li>
+                                <li class="d-flex gap-2 mb-3"><i
+                                        class="bi bi-check-circle-fill text-neon flex-shrink-0 mt-1"></i><span
+                                        class="text-muted">Reactive RGB LED system</span></li>
+                                <li class="d-flex gap-2 mb-3"><i
+                                        class="bi bi-check-circle-fill text-neon flex-shrink-0 mt-1"></i><span
+                                        class="text-muted">Multi-layer weathered paint</span></li>
+                                <li class="d-flex gap-2 mb-3"><i
+                                        class="bi bi-check-circle-fill text-neon flex-shrink-0 mt-1"></i><span
+                                        class="text-muted">Custom display base included</span></li>
+                                <li class="d-flex gap-2"><i
+                                        class="bi bi-check-circle-fill text-neon flex-shrink-0 mt-1"></i><span
+                                        class="text-muted">Full build documentation</span></li>
+                            </ul>
+                            <a href="contact.html" class="btn btn-neon w-100">Get Quote</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 reveal delay-2">
+                        <div class="pricing-card h-100">
+                            <span class="chip mb-4 d-inline-block">Collector Grade</span>
+                            <div class="pricing-price mb-1">$2,500<span style="font-size:1rem;opacity:.6">+</span></div>
+                            <p class="text-muted small mb-4">8-12 Week Full Custom</p>
+                            <ul class="list-unstyled text-start mb-5">
+                                <li class="d-flex gap-2 mb-3"><i
+                                        class="bi bi-check-circle-fill text-neon flex-shrink-0 mt-1"></i><span
+                                        class="text-muted">Articulated moving parts</span></li>
+                                <li class="d-flex gap-2 mb-3"><i
+                                        class="bi bi-check-circle-fill text-neon flex-shrink-0 mt-1"></i><span
+                                        class="text-muted">OLED screen integrations</span></li>
+                                <li class="d-flex gap-2 mb-3"><i
+                                        class="bi bi-check-circle-fill text-neon flex-shrink-0 mt-1"></i><span
+                                        class="text-muted">Bluetooth &amp; sound system</span></li>
+                                <li class="d-flex gap-2 mb-3"><i
+                                        class="bi bi-check-circle-fill text-neon flex-shrink-0 mt-1"></i><span
+                                        class="text-muted">Custom padded display case</span></li>
+                                <li class="d-flex gap-2"><i
+                                        class="bi bi-check-circle-fill text-neon flex-shrink-0 mt-1"></i><span
+                                        class="text-muted">Certificate of authenticity</span></li>
+                            </ul>
+                            <a href="contact.html" class="btn btn-outline-premium w-100">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="section-py">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <div class="chip mb-3 reveal"><i class="bi bi-question-circle"></i> FAQ</div>
+                    <h2 class="section-title reveal delay-1">Common Questions</h2>
+                </div>
+                <div class="col-lg-8 mx-auto">
+                    <div class="faq-item reveal"><button class="faq-btn" data-bs-toggle="collapse"
+                            data-bs-target="#faq1" aria-expanded="false">How long does a commission take?<i
+                                class="bi bi-plus-lg"></i></button>
+                        <div id="faq1" class="collapse">
+                            <div class="faq-body">Master Grade: 4 weeks. Perfect Grade: 6 weeks. Collector Grade: 8-12
+                                weeks. Rush orders may be available for a premium.</div>
+                        </div>
+                    </div>
+                    <div class="faq-item reveal delay-1"><button class="faq-btn" data-bs-toggle="collapse"
+                            data-bs-target="#faq2" aria-expanded="false">Can I provide my own 3D model?<i
+                                class="bi bi-plus-lg"></i></button>
+                        <div id="faq2" class="collapse">
+                            <div class="faq-body">Yes. We accept .STL and .OBJ files. We review for printability and may
+                                suggest edits for the best result.</div>
+                        </div>
+                    </div>
+                    <div class="faq-item reveal delay-2"><button class="faq-btn" data-bs-toggle="collapse"
+                            data-bs-target="#faq3" aria-expanded="false">Is worldwide shipping available?<i
+                                class="bi bi-plus-lg"></i></button>
+                        <div id="faq3" class="collapse">
+                            <div class="faq-body">We ship to 15+ countries with full tracking, customs documentation,
+                                and insurance. 7-14 business days internationally.</div>
+                        </div>
+                    </div>
+                    <div class="faq-item reveal delay-3"><button class="faq-btn" data-bs-toggle="collapse"
+                            data-bs-target="#faq4" aria-expanded="false">Are props convention-safe?<i
+                                class="bi bi-plus-lg"></i></button>
+                        <div id="faq4" class="collapse">
+                            <div class="faq-body">All props are built convention-safe — no sharp edges, lightweight
+                                materials, included safety certificate for AX, SDCC, and more.</div>
+                        </div>
+                    </div>
+                    <div class="faq-item reveal delay-4"><button class="faq-btn" data-bs-toggle="collapse"
+                            data-bs-target="#faq5" aria-expanded="false">Do you offer payment plans?<i
+                                class="bi bi-plus-lg"></i></button>
+                        <div id="faq5" class="collapse">
+                            <div class="faq-body">Yes. 50% deposit to start, 50% on completion. Collector Grade offers a
+                                3-installment plan.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="section-py bg-alt-trigger">
+            <div class="container text-center">
+                <div class="glass-card py-5 px-4 reveal"
+                    style="border:1.5px solid var(--border-accent);max-width:700px;margin:0 auto;">
+                    <h2 class="section-title mb-3">Ready to Commission?</h2>
+                    <p class="section-subtitle mb-5">No project too complex. Let's forge your legendary piece.</p>
+                    <a href="contact.html" class="btn btn-neon btn-lg px-5">GET A FREE QUOTE</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer py-5 mt-4">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6">
+                    <a href="index.html" class="text-decoration-none d-inline-block mb-3">
+                        <img src="assets/images/logo.svg" alt="Neon Prop Studio" height="52" style="max-width:200px;">
+                    </a>
+                    <p class="text-muted mb-4" style="font-size:0.95rem;">Elevating the art of cosplay craftsmanship
+                        through innovation and dedication. Your vision, forged into reality—one artifact at a time.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="btn btn-theme-toggle" aria-label="Instagram"><i
+                                class="bi bi-instagram"></i></a>
+                        <a href="#" class="btn btn-theme-toggle" aria-label="Twitter"><i
+                                class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="btn btn-theme-toggle" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                        <a href="#" class="btn btn-theme-toggle" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <h6 class="fw-bold mb-4 text-uppercase" style="letter-spacing:1px;font-size:0.82rem;">Explore</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><a href="about.html" class="footer-link">Our Story</a></li>
+                        <li class="mb-3"><a href="services.html" class="footer-link">Methods</a></li>
+                        <li class="mb-3"><a href="showcase.html" class="footer-link">Gallery</a></li>
+                        <li class="mb-3"><a href="home2.html" class="footer-link">Discover</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <h6 class="fw-bold mb-4 text-uppercase" style="letter-spacing:1px;font-size:0.82rem;">Support</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><a href="contact.html" class="footer-link">Contact Us</a></li>
+                        <li class="mb-3"><a href="contact.html#faq" class="footer-link">FAQ</a></li>
+                        <li class="mb-3"><a href="https://etsy.com" class="footer-link" target="_blank">Etsy Shop</a>
+                        </li>
+                        <li class="mb-3"><a href="coming-soon.html" class="footer-link">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <h6 class="fw-bold mb-4 text-uppercase" style="letter-spacing:1px;font-size:0.82rem;">Newsletter
+                    </h6>
+                    <p class="text-muted mb-3" style="font-size:0.9rem;">Get notified about batch drops, limited
+                        releases, and new prop designs.</p>
+                    <form class="needs-validation" novalidate>
+                        <div class="d-flex gap-2">
+                            <input type="email" class="form-control-premium form-control flex-grow-1"
+                                placeholder="your@email.com" required aria-label="Email address">
+                            <button class="btn btn-neon px-3" type="submit"
+                                style="border-radius:var(--border-radius-sm);white-space:nowrap;">Join</button>
+                        </div>
+                    </form>
+                    <p class="text-muted mt-2" style="font-size:0.78rem;">No spam. Unsubscribe anytime.</p>
+                </div>
+            </div>
+            <hr class="divider-gradient my-5">
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 text-muted"
+                style="font-size:0.85rem;">
+                <p class="mb-0">&copy; 2026 Neon Prop Studio. All rights reserved.</p>
+                <div class="d-flex gap-4">
+                    <a href="#" class="footer-link" style="font-size:0.85rem;">Privacy</a>
+                    <a href="#" class="footer-link" style="font-size:0.85rem;">Terms</a>
+                    <a href="#" class="footer-link" style="font-size:0.85rem;">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="authToast" class="toast align-items-center text-white border-0" role="alert" aria-live="assertive"
+            aria-atomic="true" style="background:var(--grad-primary);">
+            <div class="d-flex">
+                <div class="toast-body" id="toastMessage">Welcome!</div><button type="button"
+                    class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/auth.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,144 @@
+/* Custom Design System - Enhancing Bootstrap 5 */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;500;700&display=swap');
+
+:root {
+    --primary-neon: #00f2ff;
+    --secondary-neon: #bc13fe;
+    --accent-gold: #ffd700;
+    --bg-dark: #0a0b0e;
+    --bg-card: rgba(255, 255, 255, 0.05);
+    --text-main: #f0f0f0;
+    --text-muted: #a0a0a0;
+    --grad-primary: linear-gradient(135deg, var(--primary-neon), var(--secondary-neon));
+    --shadow-glow: 0 0 20px rgba(0, 242, 255, 0.3);
+    --transition-smooth: all 0.3sease;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+.o-font {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 800;
+}
+
+/* Custom Glassmorphism Cards */
+.glass-card {
+    background: var(--bg-card);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+    transition: var(--transition-smooth);
+}
+
+.glass-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-neon);
+    box-shadow: var(--shadow-glow);
+}
+
+/* Neon Text */
+.text-neon {
+    background: var(--grad-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 10px rgba(0, 242, 255, 0.2);
+}
+
+/* Premium Buttons */
+.btn-neon {
+    background: var(--grad-primary);
+    color: #fff;
+    border: none;
+    font-weight: 700;
+    padding: 12px 35px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition-smooth);
+}
+
+.btn-neon:hover {
+    color: #fff;
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(188, 19, 254, 0.4);
+}
+
+.btn-neon-outline {
+    background: transparent;
+    border: 2px solid var(--primary-neon);
+    color: var(--primary-neon);
+    font-weight: 700;
+    padding: 11px 34px;
+    border-radius: 50px;
+    transition: var(--transition-smooth);
+}
+
+.btn-neon-outline:hover {
+    background: var(--primary-neon);
+    color: var(--bg-dark);
+    box-shadow: var(--shadow-glow);
+}
+
+/* Navbar Enhancement */
+.navbar-custom {
+    padding: 20px 0;
+    transition: var(--transition-smooth);
+}
+
+.navbar-custom.scrolled {
+    background: rgba(10, 11, 14, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-link {
+    color: var(--text-main) !important;
+    font-weight: 600;
+    margin: 0 15px;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background: var(--grad-primary);
+    transition: var(--transition-smooth);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Section Spacing */
+.py-section {
+    padding: 100px 0;
+}
+
+/* Image Hover Effects */
+.img-hover {
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.img-hover img {
+    transition: transform 0.5s ease;
+}
+
+.img-hover:hover img {
+    transform: scale(1.1);
+}

@@ -1,0 +1,158 @@
+/* 
+   Neon Prop Studio — Enhanced Dark Mode v2.0
+   Applied via [data-theme="dark"] on <html>
+*/
+
+[data-theme="dark"] {
+    /* ── Core Palette ── */
+    --primary-neon: #00F2FF;
+    --primary-glow: rgba(0, 242, 255, 0.3);
+    --secondary-neon: #BC13FE;
+    --secondary-glow: rgba(188, 19, 254, 0.25);
+    --accent-cyan: #00F2FF;
+    --accent-pink: #FF2D78;
+    --accent-gold: #FFCA28;
+
+    /* ── Surfaces ── */
+    --bg-main: #060A14;
+    --bg-alt: #0A0F1E;
+    --bg-card: rgba(12, 18, 35, 0.9);
+    --bg-section-alt: #0D1428;
+    --text-main: #E8F0FF;
+    --text-muted: #8BA3CC;
+    --text-subtle: #4A6080;
+    --border-color: rgba(0, 242, 255, 0.08);
+    --border-accent: rgba(0, 242, 255, 0.2);
+
+    --glass-bg: rgba(8, 14, 28, 0.75);
+    --glass-border: rgba(0, 242, 255, 0.12);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+    --nav-scrolled-bg: rgba(6, 10, 20, 0.92);
+
+    /* ── Gradients ── */
+    --grad-primary: linear-gradient(135deg, #00F2FF, #BC13FE);
+    --grad-secondary: linear-gradient(135deg, #00C3FF, #00F2FF);
+    --grad-warm: linear-gradient(135deg, #FFCA28, #FF2D78);
+    --grad-neon: linear-gradient(135deg, #00F2FF 0%, #BC13FE 50%, #FF2D78 100%);
+    --grad-card: linear-gradient(145deg, rgba(12, 18, 35, 0.95), rgba(8, 14, 28, 0.8));
+
+    /* ── Shadows ── */
+    --shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.55);
+    --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.8);
+    --shadow-glow: 0 0 30px rgba(0, 242, 255, 0.25);
+    --shadow-glow-intense: 0 0 50px rgba(0, 242, 255, 0.4), 0 0 100px rgba(188, 19, 254, 0.2);
+}
+
+/* ── Dark Mode Component Overrides ── */
+[data-theme="dark"] .navbar-custom {
+    background: transparent;
+}
+
+[data-theme="dark"] .navbar-custom.scrolled {
+    background: rgba(6, 10, 20, 0.94) !important;
+    border-bottom-color: rgba(0, 242, 255, 0.1);
+}
+
+[data-theme="dark"] .navbar-collapse {
+    background: rgba(8, 14, 28, 0.92);
+    border-color: var(--glass-border);
+}
+
+[data-theme="dark"] .glass-card {
+    background: var(--bg-card);
+    border-color: var(--glass-border);
+    box-shadow: var(--glass-shadow);
+}
+
+[data-theme="dark"] .glass-card:hover {
+    border-color: var(--border-accent);
+    box-shadow: var(--shadow-glow), 0 20px 60px rgba(0, 0, 0, 0.7);
+}
+
+[data-theme="dark"] .footer {
+    background: var(--bg-alt);
+    border-top-color: var(--border-color);
+}
+
+[data-theme="dark"] .form-control-premium {
+    background: rgba(12, 18, 35, 0.8) !important;
+    border-color: var(--border-color) !important;
+    color: var(--text-main) !important;
+}
+
+[data-theme="dark"] .form-control-premium:focus {
+    border-color: var(--primary-neon) !important;
+    background: rgba(12, 18, 35, 1) !important;
+}
+
+[data-theme="dark"] .skeleton {
+    background: linear-gradient(90deg, #0a0f1e 25%, #111827 50%, #0a0f1e 75%);
+    background-size: 200% 100%;
+}
+
+[data-theme="dark"] .progress {
+    background: rgba(0, 242, 255, 0.08);
+}
+
+[data-theme="dark"] .btn-theme-toggle {
+    border-color: var(--glass-border);
+    color: var(--text-main);
+}
+
+[data-theme="dark"] .btn-theme-toggle:hover {
+    border-color: var(--primary-neon);
+    color: var(--primary-neon);
+}
+
+[data-theme="dark"] .btn-login {
+    color: var(--text-main);
+}
+
+[data-theme="dark"] .btn-login:hover {
+    background: rgba(0, 242, 255, 0.08);
+    color: var(--primary-neon) !important;
+}
+
+[data-theme="dark"] table.table-dark {
+    --bs-table-bg: transparent;
+    --bs-table-border-color: var(--border-color);
+}
+
+/* Neon glow text for headings in dark mode */
+[data-theme="dark"] .stat-number {
+    background: var(--grad-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 0 8px rgba(0, 242, 255, 0.5));
+}
+
+/* Section backgrounds */
+[data-theme="dark"] .bg-alt {
+    background: var(--bg-alt);
+}
+
+[data-theme="dark"] .bg-alt-trigger {
+    background: var(--bg-section-alt);
+}
+
+/* Card image hover glow effect */
+[data-theme="dark"] .img-card-hover {
+    filter: drop-shadow(0 0 15px rgba(0, 242, 255, 0.2));
+}
+
+/* Nav link dark highlight */
+[data-theme="dark"] .nav-link {
+    color: var(--text-main) !important;
+}
+
+[data-theme="dark"] .nav-link:hover,
+[data-theme="dark"] .nav-link.active {
+    color: var(--primary-neon) !important;
+}
+
+/* Tab divider */
+[data-theme="dark"] .divider-gradient {
+    background: linear-gradient(90deg, transparent, var(--primary-neon) 30%, var(--secondary-neon) 70%, transparent);
+}

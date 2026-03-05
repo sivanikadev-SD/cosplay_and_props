@@ -1,0 +1,178 @@
+/* 
+   Neon Prop Studio — Enhanced RTL Support v2.0
+   Applied via dir="rtl" on <html>
+*/
+
+[dir="rtl"] body {
+    font-family: 'Inter', 'Tajawal', sans-serif;
+}
+
+/* ── Nav Overrides ── */
+[dir="rtl"] .navbar-nav {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .navbar-brand {
+    margin-left: 1rem;
+    margin-right: 0;
+}
+
+[dir="rtl"] .navbar-toggler {
+    margin-right: auto;
+    margin-left: 0;
+}
+
+/* ── Nav Link Underline ── */
+[dir="rtl"] .nav-link::after {
+    left: auto;
+    right: 16px;
+}
+
+/* ── Text Alignment ── */
+[dir="rtl"] .text-start {
+    text-align: right !important;
+}
+
+[dir="rtl"] .text-end {
+    text-align: left !important;
+}
+
+/* ── Flex Direction ── */
+[dir="rtl"] .d-flex.gap-3,
+[dir="rtl"] .d-flex.gap-4 {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .align-items-center.d-flex {
+    flex-direction: row-reverse;
+}
+
+/* ── Margins / Paddings ── */
+[dir="rtl"] .ms-auto {
+    margin-right: auto !important;
+    margin-left: 0 !important;
+}
+
+[dir="rtl"] .me-auto {
+    margin-left: auto !important;
+    margin-right: 0 !important;
+}
+
+[dir="rtl"] .ms-1 {
+    margin-right: 0.25rem !important;
+    margin-left: 0 !important;
+}
+
+[dir="rtl"] .ms-2 {
+    margin-right: 0.5rem !important;
+    margin-left: 0 !important;
+}
+
+[dir="rtl"] .ms-3 {
+    margin-right: 1rem !important;
+    margin-left: 0 !important;
+}
+
+[dir="rtl"] .me-1 {
+    margin-left: 0.25rem !important;
+    margin-right: 0 !important;
+}
+
+[dir="rtl"] .me-2 {
+    margin-left: 0.5rem !important;
+    margin-right: 0 !important;
+}
+
+[dir="rtl"] .me-3 {
+    margin-left: 1rem !important;
+    margin-right: 0 !important;
+}
+
+/* ── Footer ── */
+[dir="rtl"] .footer-link:hover {
+    transform: translateX(-4px);
+}
+
+/* ── Footer links ── */
+[dir="rtl"] .footer ul {
+    padding-right: 0;
+}
+
+/* ── Form inputs ── */
+[dir="rtl"] .form-control-premium,
+[dir="rtl"] .form-control {
+    text-align: right;
+}
+
+[dir="rtl"] .input-group {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .input-group .btn {
+    border-radius: var(--border-radius-sm) 0 0 var(--border-radius-sm) !important;
+}
+
+[dir="rtl"] .input-group .form-control {
+    border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0 !important;
+}
+
+/* ── Sidebar (Dashboard) ── */
+[dir="rtl"] .dashboard-sidebar {
+    right: 0;
+    left: auto;
+    border-left: 1px solid var(--border-color);
+    border-right: none;
+}
+
+[dir="rtl"] .dashboard-main {
+    margin-right: 280px;
+    margin-left: 0;
+}
+
+/* ── Process step icons ── */
+[dir="rtl"] .process-step {
+    padding-left: 0;
+    padding-right: 60px;
+}
+
+[dir="rtl"] .process-step::before {
+    right: 0;
+    left: auto;
+}
+
+/* ── Cards & hover ── */
+[dir="rtl"] .glass-card {
+    text-align: right;
+}
+
+[dir="rtl"] .glass-card .d-flex {
+    flex-direction: row-reverse;
+}
+
+/* ── Bootstrap col offset ── */
+[dir="rtl"] .offset-lg-1 {
+    margin-right: 8.33333333%;
+    margin-left: 0;
+}
+
+/* ── Icon spacing ── */
+[dir="rtl"] .bi+span,
+[dir="rtl"] .bi+p {
+    margin-right: 0.5rem;
+}
+
+[dir="rtl"] .bi {
+    margin-left: 0.4rem;
+    margin-right: 0 !important;
+}
+
+/* ── mobile navbar ── */
+@media (max-width: 991.98px) {
+    [dir="rtl"] .navbar-collapse {
+        text-align: right;
+    }
+
+    [dir="rtl"] .nav-link {
+        text-align: right;
+    }
+}

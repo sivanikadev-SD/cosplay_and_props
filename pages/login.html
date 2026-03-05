@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In | Neon Prop Studio</title>
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .auth-wrapper {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: calc(var(--nav-height)+60px) 16px 60px;
+            background: radial-gradient(ellipse 80% 50% at 50% 20%, rgba(0, 102, 255, .08), transparent);
+        }
+
+        [data-theme=dark] .auth-wrapper {
+            background: radial-gradient(ellipse 80% 50% at 50% 20%, rgba(0, 242, 255, .05), transparent);
+        }
+
+        .auth-card {
+            width: 100%;
+            max-width: 480px;
+            border-radius: var(--border-radius-xl);
+            padding: 3rem 2.5rem;
+        }
+
+        .divider-or {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--text-muted);
+            font-size: .85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 1.75rem 0;
+        }
+
+        .divider-or::before,
+        .divider-or::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border-color);
+        }
+
+        .btn-social {
+            width: 100%;
+            padding: 13px;
+            border: 1.5px solid var(--border-color);
+            border-radius: var(--border-radius-sm);
+            background: transparent;
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: .9rem;
+            transition: var(--transition-fast);
+        }
+
+        .btn-social:hover {
+            border-color: var(--primary-neon);
+            color: var(--primary-neon);
+            background: rgba(0, 102, 255, .05);
+        }
+
+        @media(max-width:575.98px) {
+            .auth-card {
+                padding: 2rem 1.5rem;
+                border-radius: var(--border-radius-lg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top"><i
+            class="bi bi-chevron-up"></i></button>
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand o-font fw-bold" href="../index.html">
+                <img src="../assets/images/logo.svg" alt="Neon Prop Studio" height="52" style="max-width:200px;">
+            </a>
+            <div class="ms-auto d-flex align-items-center gap-3">
+                <button id="theme-toggle" class="btn btn-theme-toggle" aria-label="Toggle Theme"><i
+                        class="bi bi-sun-fill"></i></button>
+                <button id="rtl-toggle" class="btn btn-link text-neon fw-bold px-1"
+                    style="font-size:.8rem;letter-spacing:1px;" aria-label="Toggle RTL">RTL</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="auth-wrapper" id="main-content">
+        <div class="auth-card glass-card reveal">
+            <!-- Logo -->
+            <div class="text-center mb-5">
+                <h1 class="text-muted mt-1" style="font-size:1.5rem;">Welcome back, Forger</h1>
+            </div>
+
+            <h1 class="fw-bold mb-4 text-center" style="font-family:'Outfit',sans-serif;font-size:1.5rem;">Sign In to
+                Your Studio</h1>
+
+            <!-- Social -->
+            <button class="btn-social mb-3 d-flex align-items-center justify-content-center gap-3">
+                <i class="bi bi-google"></i> Continue with Google
+            </button>
+            <button class="btn-social d-flex align-items-center justify-content-center gap-3">
+                <i class="bi bi-discord"></i> Continue with Discord
+            </button>
+
+            <div class="divider-or">or</div>
+
+            <!-- Login Form -->
+            <form id="loginForm" class="needs-validation" novalidate>
+                <div class="mb-3">
+                    <label class="form-label fw-bold small text-muted"
+                        style="text-transform:uppercase;letter-spacing:1px;">Email</label>
+                    <input type="email" class="form-control form-control-premium" id="loginEmail"
+                        placeholder="your@email.com" required autocomplete="email">
+                </div>
+                <div class="mb-4">
+                    <div class="d-flex justify-content-between align-items-center mb-1">
+                        <label class="form-label fw-bold small text-muted mb-0"
+                            style="text-transform:uppercase;letter-spacing:1px;">Password</label>
+                        <a href="#" style="font-size:.8rem;color:var(--primary-neon);">Forgot Password?</a>
+                    </div>
+                    <input type="password" class="form-control form-control-premium" id="loginPassword"
+                        placeholder="••••••••" required autocomplete="current-password">
+                </div>
+                <div class="form-check mb-4">
+                    <input class="form-check-input" type="checkbox" id="rememberCheck">
+                    <label class="form-check-label text-muted" style="font-size:.9rem;cursor:pointer;"
+                        for="rememberCheck">Remember me for 30 days</label>
+                </div>
+                <button type="submit" class="btn btn-neon w-100 py-3 mb-4" id="loginBtn">
+                    <span class="btn-text"><i class="bi bi-box-arrow-in-right me-2"></i>Sign In to Studio</span>
+                    <span class="spinner-border spinner-border-sm d-none" role="status"></span>
+                </button>
+                <p class="text-center text-muted mb-0" style="font-size:.88rem;">
+                    New to the forge? <a href="signup.html" style="color:var(--primary-neon);font-weight:700;">Create an
+                        Account →</a>
+                </p>
+            </form>
+        </div>
+    </main>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="authToast" class="toast align-items-center text-white border-0" role="alert" aria-live="assertive"
+            aria-atomic="true" style="background:var(--grad-primary);">
+            <div class="d-flex">
+                <div class="toast-body" id="toastMessage">Welcome back!</div><button type="button"
+                    class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/auth.js"></script>
+</body>
+
+</html>

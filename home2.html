@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover The Forge | Neon Prop Studio</title>
+    <meta name="description"
+        content="Explore trending cosplay artifacts, batch releases, category archives, and the exclusive blueprint vault at Neon Prop Studio.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <!-- Bootstrap 5 & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+
+    <style>
+        /* ── Discover Hero ── */
+        .discover-hero {
+            min-height: 75vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: url('https://images.unsplash.com/photo-1614850523296-d8c1af93d400?auto=format&fit=crop&q=80&w=1920') center/cover no-repeat;
+            padding-top: calc(var(--nav-height) + 40px);
+        }
+
+        .discover-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(6, 10, 20, 0.6) 0%, rgba(6, 10, 20, 0.85) 100%);
+        }
+
+        [data-theme="light"] .discover-hero::before {
+            background: linear-gradient(to bottom, rgba(240, 244, 255, 0.5), rgba(240, 244, 255, 0.8));
+        }
+
+        .discover-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* ── Category Cards ── */
+        .category-card {
+            position: relative;
+            height: 380px;
+            overflow: hidden;
+            border-radius: var(--border-radius-lg);
+            cursor: pointer;
+            border: 1px solid var(--border-color);
+            transition: var(--transition-smooth);
+        }
+
+        .category-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .category-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .category-card:hover {
+            border-color: var(--primary-neon);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .category-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(5, 10, 30, 0.92) 0%, rgba(5, 10, 30, 0.2) 70%, transparent 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 1.75rem;
+            color: white;
+            transition: var(--transition-smooth);
+        }
+
+        /* ── Trending Cards ── */
+        .trending-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            transition: var(--transition-smooth);
+        }
+
+        .trending-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-glow), var(--shadow-lg);
+            border-color: var(--border-accent);
+        }
+
+        .trending-card-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .trending-card-body {
+            padding: 1.25rem;
+        }
+
+        /* ── Video Section ── */
+        .video-card {
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+        }
+
+        .video-card iframe {
+            display: block;
+        }
+
+        @media (max-width: 767.98px) {
+            .discover-hero {
+                min-height: 60vh;
+            }
+
+            .category-card {
+                height: 260px;
+            }
+
+            .trending-card-img {
+                height: 180px;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .category-card {
+                height: 220px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top"><i
+            class="bi bi-chevron-up"></i></button>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top" role="navigation" aria-label="Main Navigation">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" aria-label="Neon Prop Studio Home">
+                <img src="assets/images/logo.svg" alt="Neon Prop Studio" height="44" class="d-block"
+                    style="max-width:180px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent"
+                aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="bi bi-list fs-2 text-neon"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="home2.html">Discover</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="pages/about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pages/services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pages/showcase.html">Showcase</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pages/contact.html">Contact</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-3">
+                    <a href="pages/login.html" class="btn-login text-decoration-none d-none d-lg-inline-block">Sign
+                        In</a>
+                    <a href="pages/signup.html" class="btn btn-premium btn-sm">Join Studio</a>
+                    <button id="theme-toggle" class="btn btn-theme-toggle" aria-label="Toggle Theme"><i
+                            class="bi bi-sun-fill"></i></button>
+                    <button id="rtl-toggle" class="btn btn-link text-decoration-none text-neon fw-bold px-1"
+                        style="font-size:0.8rem;letter-spacing:1px;" aria-label="Toggle RTL">RTL</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <!-- ═══ DISCOVER HERO ═══ -->
+        <section id="discover-hero" class="discover-hero">
+            <div class="container text-center text-white">
+                <div class="chip mb-4 mx-auto reveal"
+                    style="width:fit-content;background:rgba(0,242,255,0.15);border-color:rgba(0,242,255,0.3);"><i
+                        class="bi bi-compass"></i> Explore The Archive</div>
+                <h1 class="display-2 fw-bold mb-4 reveal delay-1" style="font-family:'Outfit',sans-serif;color:var(--text-main);">Discover the
+                    <span
+                        style="background:var(--grad-neon);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Unseen</span>
+                </h1>
+                <p class="lead mb-5 col-lg-7 mx-auto reveal delay-2" style="color:var(--text-subtle);">Browse trending artifacts, new batch releases, and
+                    the exclusive blueprint vault. The most creative prop showcase on the planet.</p>
+                <div class="d-flex justify-content-center flex-wrap gap-3 reveal delay-3">
+                    <a href="#categories" class="btn btn-premium btn-lg px-5">Browse Categories</a>
+                    <a href="#trending" class="btn btn-outline-light btn-lg px-5" style="color:var(--text-subtle);">Trending Now</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ CATEGORIES ═══ -->
+        <section id="categories" class="section-py">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <div class="chip mb-3 reveal"><i class="bi bi-grid-3x3-gap"></i> Categories</div>
+                    <h2 class="section-title reveal delay-1">Explore The Archives</h2>
+                    <p class="section-subtitle reveal delay-2">Filtered by artifact class — find your next commission
+                        inspiration</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-4 reveal">
+                        <div class="category-card">
+                            <img src="https://images.unsplash.com/photo-1589118949245-7d38baf380d6?auto=format&fit=crop&q=80&w=800"
+                                alt="Cyber Weapons Category">
+                            <div class="category-overlay">
+                                <span class="badge-neon mb-2">124 Projects</span>
+                                <h3 class="fw-bold m-0">Cyber Weapons</h3>
+                                <p class="text-white-50 small mb-0 mt-1">Swords · Guns · Staves</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 reveal delay-1">
+                        <div class="category-card">
+                            <img src="https://images.unsplash.com/photo-1542332213-31f87348057f?auto=format&fit=crop&q=80&w=800"
+                                alt="Armor Systems Category">
+                            <div class="category-overlay">
+                                <span class="badge-neon mb-2">86 Projects</span>
+                                <h3 class="fw-bold m-0">Armor Systems</h3>
+                                <p class="text-white-50 small mb-0 mt-1">Chest · Shoulder · Helmet</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 reveal delay-2">
+                        <div class="category-card">
+                            <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=800"
+                                alt="Tech Helmets Category">
+                            <div class="category-overlay">
+                                <span class="badge-neon mb-2">52 Projects</span>
+                                <h3 class="fw-bold m-0">Tech Helmets</h3>
+                                <p class="text-white-50 small mb-0 mt-1">LED · Visor · Full Face</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 reveal delay-3">
+                        <div class="category-card">
+                            <img src="./assets/images/ronin.jpg"
+                                alt="Magic Accessories Category">
+                            <div class="category-overlay">
+                                <span class="badge-neon mb-2">38 Projects</span>
+                                <h3 class="fw-bold m-0">Magic Accessories</h3>
+                                <p class="text-white-50 small mb-0 mt-1">Wands · Staffs · Orbs</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 reveal delay-4">
+                        <div class="category-card">
+                            <img src="./assets/images/shield.jpg"
+                                alt="Shields Category">
+                            <div class="category-overlay">
+                                <span class="badge-neon mb-2">61 Projects</span>
+                                <h3 class="fw-bold m-0">Shields &amp; Barriers</h3>
+                                <p class="text-white-50 small mb-0 mt-1">Round · Kite · Tower</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 reveal delay-5">
+                        <div class="category-card">
+                            <img src="https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&q=80&w=800"
+                                alt="Movie Props Category">
+                            <div class="category-overlay">
+                                <span class="badge-neon mb-2">44 Projects</span>
+                                <h3 class="fw-bold m-0">Movie &amp; Game Props</h3>
+                                <p class="text-white-50 small mb-0 mt-1">Sci-fi · Fantasy · Horror</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ TRENDING ═══ -->
+        <section id="trending" class="section-py bg-alt">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <div class="chip mb-3 reveal"><i class="bi bi-fire"></i> Hot Right Now</div>
+                    <h2 class="section-title reveal delay-1">Trending Artifacts</h2>
+                    <p class="section-subtitle reveal delay-2">Most loved by the community this week</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-sm-6 col-lg-3 reveal">
+                        <div class="trending-card h-100">
+                            <img src="./assets/images/single.webp" class="trending-card-img"
+                                alt="Pulsar Glaive Trending Prop">
+                            <div class="trending-card-body">
+                                <span class="badge-neon mb-2 d-inline-block">Electronics Included</span>
+                                <h5 class="fw-bold mb-1 mt-2">Pulsar Glaive</h5>
+                                <p class="text-muted small mb-3">Model R-1 // IoT Build // 180 LEDs</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="fw-bold"
+                                        style="font-size:1.1rem;color:var(--primary-neon);">$1,450</span>
+                                    <a href="pages/contact.html" class="btn btn-premium btn-sm">Forge</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3 reveal delay-1">
+                        <div class="trending-card h-100">
+                            <img src="./assets/images/single2.webp" class="trending-card-img"
+                                alt="Nova Katana Trending Prop">
+                            <div class="trending-card-body">
+                                <span class="badge-neon mb-2 d-inline-block">8K Resin Print</span>
+                                <h5 class="fw-bold mb-1 mt-2">Nova Katana</h5>
+                                <p class="text-muted small mb-3">Flexi-Resin // Multi-Layer Paint</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="fw-bold"
+                                        style="font-size:1.1rem;color:var(--primary-neon);">$580</span>
+                                    <a href="pages/contact.html" class="btn btn-premium btn-sm">Forge</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3 reveal delay-2">
+                        <div class="trending-card h-100">
+                            <img src="./assets/images/single3.jpg" class="trending-card-img"
+                                alt="Ronin V-Mask Trending Prop">
+                            <div class="trending-card-body">
+                                <span class="badge-neon mb-2 d-inline-block">Fan Favorite</span>
+                                <h5 class="fw-bold mb-1 mt-2">Ronin V-Mask</h5>
+                                <p class="text-muted small mb-3">8K Resin // Weathered Finish</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="fw-bold"
+                                        style="font-size:1.1rem;color:var(--primary-neon);">$420</span>
+                                    <a href="pages/contact.html" class="btn btn-premium btn-sm">Forge</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3 reveal delay-3">
+                        <div class="trending-card h-100">
+                            <img src="./assets/images/shield.jpg" class="trending-card-img"
+                                alt="Aegis Shield Trending Prop">
+                            <div class="trending-card-body">
+                                <span class="badge-neon mb-2 d-inline-block">New Drop</span>
+                                <h5 class="fw-bold mb-1 mt-2">Aegis Shield X90</h5>
+                                <p class="text-muted small mb-3">Carbon Fiber // RGB Reactive</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="fw-bold"
+                                        style="font-size:1.1rem;color:var(--primary-neon);">$920</span>
+                                    <a href="pages/contact.html" class="btn btn-premium btn-sm">Forge</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ BEHIND THE BUILD (VIDEO) ═══ -->
+        <section id="forge-video" class="section-py">
+            <div class="container">
+                <div class="glass-card p-0 overflow-hidden video-card reveal">
+                    <div class="row g-0">
+                        <div class="col-lg-7">
+                            <div class="ratio ratio-16x9">
+                                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                                    title="Neon Prop Studio — Behind the Build" allowfullscreen loading="lazy"></iframe>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 p-4 p-lg-5 d-flex flex-column justify-content-center">
+                            <div class="chip mb-3"><i class="bi bi-play-circle"></i> Process Film</div>
+                            <h2 class="fw-bold mb-3"
+                                style="font-family:'Outfit',sans-serif;font-size:clamp(1.5rem,3vw,2rem);">Behind the
+                                Build</h2>
+                            <p class="text-muted mb-4">Watch the master smiths at work—from the first digital blueprint
+                                all the way to the final automotive clear-coat application. Real craft, real precision.
+                            </p>
+                            <div class="d-flex gap-3 flex-wrap">
+                                <a href="pages/about.html" class="btn btn-neon btn-sm">Our Methodology →</a>
+                                <a href="pages/showcase.html" class="btn btn-neon-outline btn-sm">Full Gallery</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ BATCH STATUS ═══ -->
+        <section id="status-discover" class="section-py bg-alt-trigger">
+            <div class="container text-center">
+                <div class="chip mb-4 mx-auto reveal" style="width:fit-content;"><i class="bi bi-bar-chart-fill"></i>
+                    Live Status</div>
+                <h2 class="section-title reveal delay-1">Batch #04 Sync</h2>
+                <p class="section-subtitle mb-5 reveal delay-2">Queue Strength: 72% — Limited Slots Remaining for 2026
+                </p>
+                <div class="col-lg-7 mx-auto reveal delay-3">
+                    <div class="glass-card px-4 py-4">
+                        <div class="d-flex justify-content-between mb-2"
+                            style="font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;">
+                            <span style="color:var(--primary-neon);">72% Filled</span>
+                            <span class="text-muted">28% Remaining</span>
+                        </div>
+                        <div class="progress mb-4" style="height:14px;">
+                            <div class="progress-bar bg-neon" style="width:72%;border-radius:10px;"></div>
+                        </div>
+                        <div class="row g-3 text-center mb-4">
+                            <div class="col-4">
+                                <div
+                                    style="font-family:'Outfit',sans-serif;font-weight:900;font-size:1.4rem;color:var(--primary-neon);">
+                                    18</div>
+                                <div
+                                    style="font-size:0.75rem;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:1px;">
+                                    Slots Filled</div>
+                            </div>
+                            <div class="col-4">
+                                <div
+                                    style="font-family:'Outfit',sans-serif;font-weight:900;font-size:1.4rem;color:var(--accent-gold);">
+                                    7</div>
+                                <div
+                                    style="font-size:0.75rem;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:1px;">
+                                    Slots Left</div>
+                            </div>
+                            <div class="col-4">
+                                <div
+                                    style="font-family:'Outfit',sans-serif;font-weight:900;font-size:1.4rem;color:var(--secondary-neon);">
+                                    Oct</div>
+                                <div
+                                    style="font-size:0.75rem;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:1px;">
+                                    Delivery Month</div>
+                            </div>
+                        </div>
+                        <a href="pages/contact.html" class="btn btn-neon w-100">Reserve Your Slot Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ ETSY VAULT ═══ -->
+        <section id="market-spotlight" class="section-py">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6 reveal-left">
+                        <div class="chip mb-3"><i class="bi bi-shop"></i> Ready to Ship</div>
+                        <h2 class="section-title mb-4">Etsy Vault</h2>
+                        <p class="text-muted mb-4" style="font-size:1.05rem;line-height:1.8;">Find our ready-to-ship
+                            artifacts on Etsy. Fully crafted, tested, and packaged—waiting for their next adventurer. No
+                            wait times, no queue.</p>
+                        <ul class="list-unstyled mb-5">
+                            <li class="d-flex align-items-center gap-3 mb-3"><i
+                                    class="bi bi-check-circle-fill text-neon"></i><span class="text-muted">Fully
+                                    hand-finished &amp; quality tested</span></li>
+                            <li class="d-flex align-items-center gap-3 mb-3"><i
+                                    class="bi bi-check-circle-fill text-neon"></i><span
+                                    class="text-muted">Convention-safe materials certificate</span></li>
+                            <li class="d-flex align-items-center gap-3"><i
+                                    class="bi bi-check-circle-fill text-neon"></i><span class="text-muted">Worldwide
+                                    tracked shipping included</span></li>
+                        </ul>
+                        <a href="https://etsy.com" target="_blank" rel="noopener" class="btn btn-neon px-5">Visit Etsy
+                            Store →</a>
+                    </div>
+                    <div class="col-lg-6 reveal-right">
+                        <div class="row g-3">
+                            <div class="col-6">
+                                <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=400"
+                                    class="img-fluid rounded-4 shadow-sm" alt="Vault Item 1"
+                                    style="height:200px;object-fit:cover;width:100%;">
+                            </div>
+                            <div class="col-6">
+                                <img src="./assets/images/saber.jpg" class="img-fluid rounded-4 shadow-sm"
+                                    alt="Vault Item 2 — Saber" style="height:200px;object-fit:cover;width:100%;">
+                            </div>
+                            <div class="col-6">
+                                <img src="./assets/images/ronin.jpg" class="img-fluid rounded-4 shadow-sm"
+                                    alt="Vault Item 3 — Ronin" style="height:200px;object-fit:cover;width:100%;">
+                            </div>
+                            <div class="col-6">
+                                <img src="./assets/images/shield.jpg" class="img-fluid rounded-4 shadow-sm"
+                                    alt="Vault Item 4 — Shield" style="height:200px;object-fit:cover;width:100%;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ═══ COMMUNITY HUB ═══ -->
+    <section id="community" class="section-py">
+        <div class="container">
+            <div class="text-center mb-5">
+                <div class="chip mb-3 reveal"><i class="bi bi-people-fill"></i> Community</div>
+                <h2 class="section-title reveal delay-1">The Forge Community</h2>
+                <p class="section-subtitle reveal delay-2">12,000+ cosplayers, builders, and enthusiasts. One shared
+                    obsession.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3 reveal">
+                    <div class="glass-card text-center py-4 px-3 h-100">
+                        <i class="bi bi-discord text-neon mb-3 d-block" style="font-size:2.5rem;"></i>
+                        <h5 class="fw-bold mb-2">Discord Server</h5>
+                        <p class="text-muted small mb-3">6,400+ members sharing WIPs, build tips, and live feedback on
+                            your designs.</p>
+                        <a href="#" class="btn btn-neon btn-sm">Join Server</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 reveal delay-1">
+                    <div class="glass-card text-center py-4 px-3 h-100">
+                        <i class="bi bi-instagram text-neon mb-3 d-block" style="font-size:2.5rem;"></i>
+                        <h5 class="fw-bold mb-2">Instagram</h5>
+                        <p class="text-muted small mb-3">Daily prop builds, convention coverage, and tutorial reels from
+                            the studio floor.</p>
+                        <a href="#" class="btn btn-neon btn-sm">Follow @neonprop</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 reveal delay-2">
+                    <div class="glass-card text-center py-4 px-3 h-100">
+                        <i class="bi bi-youtube text-neon mb-3 d-block" style="font-size:2.5rem;"></i>
+                        <h5 class="fw-bold mb-2">YouTube Channel</h5>
+                        <p class="text-muted small mb-3">Weekly documentary build series — from concept to convention
+                            floor, uncut.</p>
+                        <a href="#" class="btn btn-neon btn-sm">Watch Builds</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 reveal delay-3">
+                    <div class="glass-card text-center py-4 px-3 h-100">
+                        <i class="bi bi-envelope-heart-fill text-neon mb-3 d-block" style="font-size:2.5rem;"></i>
+                        <h5 class="fw-bold mb-2">Newsletter</h5>
+                        <p class="text-muted small mb-3">Batch slot alerts, exclusive blueprints, and member discounts
+                            before anyone else.</p>
+                        <a href="#subscribe" class="btn btn-neon btn-sm">Subscribe Free</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ WHY DISCOVER ═══ -->
+    <section id="why-discover" class="section-py bg-alt">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6 reveal-left">
+                    <img src="https://images.unsplash.com/photo-1542332213-31f87348057f?auto=format&fit=crop&q=80&w=900"
+                        alt="Studio build process" class="img-fluid rounded-4"
+                        style="height:420px;object-fit:cover;width:100%;">
+                </div>
+                <div class="col-lg-6 reveal-right">
+                    <div class="chip mb-3"><i class="bi bi-eye-fill"></i> The Discover Page</div>
+                    <h2 class="section-title mb-4">Your Window Into<br><span class="gradient-text">The Forge</span></h2>
+                    <p class="text-muted lead mb-4">This page is the beating heart of the Neon Prop ecosystem — a
+                        live-updating feed of batch releases, trending builds, new categories, and behind-the-scenes
+                        studio footage.</p>
+                    <ul class="list-unstyled">
+                        <li class="d-flex gap-3 mb-3">
+                            <i class="bi bi-check-circle-fill text-neon flex-shrink-0 mt-1"></i>
+                            <span class="text-muted">Get notified when a new batch slot opens before the Waitlist</span>
+                        </li>
+                        <li class="d-flex gap-3 mb-3">
+                            <i class="bi bi-check-circle-fill text-neon flex-shrink-0 mt-1"></i>
+                            <span class="text-muted">Discover builds from the community tag
+                                <strong>#NeonForgeBuilds</strong></span>
+                        </li>
+                        <li class="d-flex gap-3 mb-3">
+                            <i class="bi bi-check-circle-fill text-neon flex-shrink-0 mt-1"></i>
+                            <span class="text-muted">Browse the archive of 500+ completed commissions by category,
+                                series, and year</span>
+                        </li>
+                        <li class="d-flex gap-3">
+                            <i class="bi bi-check-circle-fill text-neon flex-shrink-0 mt-1"></i>
+                            <span class="text-muted">Watch exclusive time-lapse build videos before they go
+                                public</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ COMPARE TIERS ═══ -->
+    <section id="compare-tiers" class="section-py">
+        <div class="container">
+            <div class="text-center mb-5">
+                <div class="chip mb-3 reveal"><i class="bi bi-bar-chart-steps"></i> Commission Tiers</div>
+                <h2 class="section-title reveal delay-1">Quick Tier Comparison</h2>
+                <p class="section-subtitle reveal delay-2">Not sure what grade fits your project? Here's a quick
+                    snapshot.</p>
+            </div>
+            <div class="table-responsive reveal">
+                <table class="table" style="color:var(--text-main);border-color:var(--border-color);">
+                    <thead>
+                        <tr style="border-color:var(--border-color);">
+                            <th
+                                style="padding:1.2rem 1.5rem;font-size:.85rem;letter-spacing:1px;text-transform:uppercase;color:var(--text-muted);">
+                                Feature</th>
+                            <th
+                                style="padding:1.2rem 1rem;font-size:.85rem;letter-spacing:1px;text-transform:uppercase;color:var(--text-muted);">
+                                Master Grade<br><small style="font-size:.8rem;color:var(--primary-neon);">$500+</small>
+                            </th>
+                            <th
+                                style="padding:1.2rem 1rem;font-size:.85rem;letter-spacing:1px;text-transform:uppercase;border-left:2px solid var(--primary-neon);color:var(--text-muted);">
+                                Perfect Grade<br><small
+                                    style="font-size:.8rem;color:var(--primary-neon);">$1,200+</small></th>
+                            <th
+                                style="padding:1.2rem 1rem;font-size:.85rem;letter-spacing:1px;text-transform:uppercase;color:var(--text-muted);">
+                                Collector Grade<br><small
+                                    style="font-size:.8rem;color:var(--primary-neon);">$2,500+</small></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-color:var(--border-color);">
+                            <td style="padding:1rem 1.5rem;" class="fw-bold">Build Time</td>
+                            <td>4 Weeks</td>
+                            <td style="border-left:2px solid var(--primary-neon);">6 Weeks</td>
+                            <td>8-12 Weeks</td>
+                        </tr>
+                        <tr style="border-color:var(--border-color);">
+                            <td style="padding:1rem 1.5rem;" class="fw-bold">LED Lighting</td>
+                            <td>Static Accent</td>
+                            <td style="border-left:2px solid var(--primary-neon);">Reactive RGB</td>
+                            <td>Full IoT RGB</td>
+                        </tr>
+                        <tr style="border-color:var(--border-color);">
+                            <td style="padding:1rem 1.5rem;" class="fw-bold">Core Material</td>
+                            <td>Resin + PLA</td>
+                            <td style="border-left:2px solid var(--primary-neon);">Carbon Fiber</td>
+                            <td>Carbon + Alloy</td>
+                        </tr>
+                        <tr style="border-color:var(--border-color);">
+                            <td style="padding:1rem 1.5rem;" class="fw-bold">Display Base</td>
+                            <td><i class="bi bi-x-lg text-danger"></i></td>
+                            <td style="border-left:2px solid var(--primary-neon);"><i
+                                    class="bi bi-check-lg text-neon"></i></td>
+                            <td><i class="bi bi-check-lg text-neon"></i> Custom Case</td>
+                        </tr>
+                        <tr style="border-color:var(--border-color);">
+                            <td style="padding:1rem 1.5rem;" class="fw-bold">Sound System</td>
+                            <td><i class="bi bi-x-lg text-danger"></i></td>
+                            <td style="border-left:2px solid var(--primary-neon);"><i
+                                    class="bi bi-x-lg text-danger"></i></td>
+                            <td><i class="bi bi-check-lg text-neon"></i></td>
+                        </tr>
+                        <tr>
+                            <td style="padding:1rem 1.5rem;" class="fw-bold">Safety Cert.</td>
+                            <td><i class="bi bi-check-lg text-neon"></i></td>
+                            <td style="border-left:2px solid var(--primary-neon);"><i
+                                    class="bi bi-check-lg text-neon"></i></td>
+                            <td><i class="bi bi-check-lg text-neon"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="text-center mt-4 reveal">
+                <a href="pages/services.html#pricing" class="btn btn-neon px-5">See Full Pricing Details</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ NEWSLETTER SUBSCRIBE ═══ -->
+    <section id="subscribe" class="section-py bg-alt">
+        <div class="container">
+            <div class="glass-card reveal" style="border:1.5px solid var(--border-accent);">
+                <div class="row align-items-center g-4">
+                    <div class="col-lg-6">
+                        <div class="chip mb-3"><i class="bi bi-envelope-heart"></i> Early Access</div>
+                        <h3 class="fw-bold mb-2"
+                            style="font-family:'Outfit',sans-serif;font-size:clamp(1.4rem,3vw,2rem);">Get First Dibs on
+                            Batch Drops</h3>
+                        <p class="text-muted mb-0">Subscribers get batch slot alerts 24h before anyone else, plus
+                            exclusive member discount codes and free blueprint downloads.</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <form class="needs-validation" novalidate>
+                            <div class="d-flex flex-column flex-sm-row gap-3">
+                                <input type="email" class="form-control form-control-premium flex-grow-1"
+                                    placeholder="your@email.com" required aria-label="Email">
+                                <button class="btn btn-neon px-4 py-3" type="submit" style="white-space:nowrap;"><i
+                                        class="bi bi-send me-2"></i>Get Early Access</button>
+                            </div>
+                            <p class="text-muted mt-2 mb-0" style="font-size:.78rem;"><i
+                                    class="bi bi-shield-check me-1"></i>No spam. Unsubscribe anytime.</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (shared) -->
+    <footer class="footer py-5 mt-4">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6">
+                    <a href="index.html" class="text-decoration-none d-inline-block mb-3">
+                        <img src="assets/images/logo.svg" alt="Neon Prop Studio" height="52" style="max-width:200px;">
+                    </a>
+                    <p class="text-muted mb-4" style="font-size:0.95rem;">Elevating the art of cosplay craftsmanship
+                        through innovation and dedication. Your vision, forged into reality—one artifact at a time.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="btn btn-theme-toggle" aria-label="Instagram"><i
+                                class="bi bi-instagram"></i></a>
+                        <a href="#" class="btn btn-theme-toggle" aria-label="Twitter"><i
+                                class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="btn btn-theme-toggle" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                        <a href="#" class="btn btn-theme-toggle" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <h6 class="fw-bold mb-4 text-uppercase" style="letter-spacing:1px;font-size:0.82rem;">Explore</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><a href="pages/about.html" class="footer-link">Our Story</a></li>
+                        <li class="mb-3"><a href="pages/services.html" class="footer-link">Methods</a></li>
+                        <li class="mb-3"><a href="pages/showcase.html" class="footer-link">Gallery</a></li>
+                        <li class="mb-3"><a href="home2.html" class="footer-link">Discover</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <h6 class="fw-bold mb-4 text-uppercase" style="letter-spacing:1px;font-size:0.82rem;">Support</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><a href="pages/contact.html" class="footer-link">Contact Us</a></li>
+                        <li class="mb-3"><a href="pages/contact.html#faq" class="footer-link">FAQ</a></li>
+                        <li class="mb-3"><a href="https://etsy.com" class="footer-link" target="_blank">Etsy Shop</a>
+                        </li>
+                        <li class="mb-3"><a href="pages/coming-soon.html" class="footer-link">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <h6 class="fw-bold mb-4 text-uppercase" style="letter-spacing:1px;font-size:0.82rem;">Newsletter
+                    </h6>
+                    <p class="text-muted mb-3" style="font-size:0.9rem;">Get notified about batch drops, limited
+                        releases, and new prop designs.</p>
+                    <form class="needs-validation" novalidate>
+                        <div class="d-flex gap-2">
+                            <input type="email" class="form-control-premium form-control flex-grow-1"
+                                placeholder="your@email.com" required aria-label="Email address">
+                            <button class="btn btn-neon px-3" type="submit"
+                                style="border-radius:var(--border-radius-sm);white-space:nowrap;">Join</button>
+                        </div>
+                    </form>
+                    <p class="text-muted mt-2" style="font-size:0.78rem;">No spam. Unsubscribe anytime.</p>
+                </div>
+            </div>
+            <hr class="divider-gradient my-5">
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 text-muted"
+                style="font-size:0.85rem;">
+                <p class="mb-0">&copy; 2026 Neon Prop Studio. All rights reserved.</p>
+                <div class="d-flex gap-4">
+                    <a href="#" class="footer-link" style="font-size:0.85rem;">Privacy</a>
+                    <a href="#" class="footer-link" style="font-size:0.85rem;">Terms</a>
+                    <a href="#" class="footer-link" style="font-size:0.85rem;">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Toast Container -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="authToast" class="toast align-items-center text-white border-0" role="alert" aria-live="assertive"
+            aria-atomic="true" style="background:var(--grad-primary);">
+            <div class="d-flex">
+                <div class="toast-body" id="toastMessage">Welcome to the Studio!</div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                    aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/auth.js"></script>
+</body>
+
+</html>
