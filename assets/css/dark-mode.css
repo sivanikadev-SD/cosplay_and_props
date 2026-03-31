@@ -55,8 +55,9 @@
 }
 
 [data-theme="dark"] .navbar-collapse {
-    background: rgba(8, 14, 28, 0.92);
+    background: rgba(6, 10, 20, 0.98);
     border-color: var(--glass-border);
+    color: var(--text-main);
 }
 
 [data-theme="dark"] .glass-card {

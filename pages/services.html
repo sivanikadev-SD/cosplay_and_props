@@ -30,7 +30,7 @@
         }
 
         [data-theme=light] .page-hero::before {
-            background: linear-gradient(to bottom, rgba(240, 244, 255, .6), rgba(240, 244, 255, .9));
+            background: linear-gradient(to bottom, rgba(240, 244, 255, .75), rgba(240, 244, 255, .95));
         }
 
         .page-hero .container {
@@ -66,6 +66,8 @@
             transition: var(--transition-smooth);
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
 
         .pricing-card.featured {
@@ -192,11 +194,11 @@
             <div class="container text-center">
                 <div class="chip mb-3 mx-auto reveal" style="width:fit-content;">What We Offer</div>
                 <h1 class="reveal delay-1"
-                    style="font-family:'Outfit',sans-serif;font-weight:900;font-size:clamp(2.2rem,5vw,3.8rem);color:white;margin-bottom:1rem;">
+                    style="font-family:'Outfit',sans-serif;font-weight:900;font-size:clamp(2.2rem,5vw,3.8rem);color:var(--text-main);margin-bottom:1rem;">
                     Forge <span
                         style="background:var(--grad-neon);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Capabilities</span>
                 </h1>
-                <p class="col-lg-6 mx-auto reveal delay-2" style="color:rgba(255,255,255,.7);font-size:1.05rem;">
+                <p class="col-lg-6 mx-auto reveal delay-2" style="color:var(--text-muted);font-size:1.05rem;">
                     Lightweight, safe, and convention-friendly artifacts powered by cutting-edge fabrication technology.
                 </p>
             </div>
@@ -416,7 +418,7 @@
                             <span class="chip mb-4 d-inline-block">Master Grade</span>
                             <div class="pricing-price mb-1">$500<span style="font-size:1rem;opacity:.6">+</span></div>
                             <p class="text-muted small mb-4">4-Week Build</p>
-                            <ul class="list-unstyled text-start mb-5">
+                            <ul class="list-unstyled text-start mb-auto pb-4" style="text-align:left !important;">
                                 <li class="d-flex gap-2 mb-3"><i
                                         class="bi bi-check-circle-fill text-neon flex-shrink-0 mt-1"></i><span
                                         class="text-muted">High-detail 8K resin printing</span></li>
@@ -439,7 +441,7 @@
                             <div class="d-block mb-4"><span class="chip">Perfect Grade</span></div>
                             <div class="pricing-price mb-1">$1,200<span style="font-size:1rem;opacity:.6">+</span></div>
                             <p class="text-muted small mb-4">6-Week Build · Priority Queue</p>
-                            <ul class="list-unstyled text-start mb-5">
+                            <ul class="list-unstyled text-start mb-auto pb-4" style="text-align:left !important;">
                                 <li class="d-flex gap-2 mb-3"><i
                                         class="bi bi-check-circle-fill text-neon flex-shrink-0 mt-1"></i><span
                                         class="text-muted">Carbon fiber internal core</span></li>
@@ -464,7 +466,7 @@
                             <span class="chip mb-4 d-inline-block">Collector Grade</span>
                             <div class="pricing-price mb-1">$2,500<span style="font-size:1rem;opacity:.6">+</span></div>
                             <p class="text-muted small mb-4">8-12 Week Full Custom</p>
-                            <ul class="list-unstyled text-start mb-5">
+                            <ul class="list-unstyled text-start mb-auto pb-4" style="text-align:left !important;">
                                 <li class="d-flex gap-2 mb-3"><i
                                         class="bi bi-check-circle-fill text-neon flex-shrink-0 mt-1"></i><span
                                         class="text-muted">Articulated moving parts</span></li>
@@ -554,12 +556,12 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer py-5 mt-4">
+    <footer class="footer py-5">
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-4 col-md-6">
-                    <a href="index.html" class="text-decoration-none d-inline-block mb-3">
-                        <img src="assets/images/logo.svg" alt="Neon Prop Studio" height="52" style="max-width:200px;">
+                    <a href="../index.html" class="text-decoration-none d-inline-block mb-3">
+                        <img src="../assets/images/logo.svg" alt="Neon Prop Studio" height="52" style="max-width:200px;">
                     </a>
                     <p class="text-muted mb-4" style="font-size:0.95rem;">Elevating the art of cosplay craftsmanship
                         through innovation and dedication. Your vision, forged into reality—one artifact at a time.</p>

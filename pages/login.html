@@ -76,10 +76,24 @@
             background: rgba(0, 102, 255, .05);
         }
 
-        @media(max-width:575.98px) {
+        @media(max-width:767.98px) {
+            .auth-wrapper {
+                padding: calc(var(--nav-height) + 40px) 16px 40px;
+                align-items: flex-start;
+            }
             .auth-card {
                 padding: 2rem 1.5rem;
                 border-radius: var(--border-radius-lg);
+            }
+        }
+
+        @media(max-width:400px) {
+            .auth-wrapper {
+                padding: calc(var(--nav-height) + 20px) 12px 30px;
+            }
+            .auth-card {
+                padding: 1.5rem 1.25rem;
+                border-radius: var(--border-radius-md);
             }
         }
     </style>
@@ -131,13 +145,13 @@
                         placeholder="your@email.com" required autocomplete="email">
                 </div>
                 <div class="mb-4">
-                    <div class="d-flex justify-content-between align-items-center mb-1">
-                        <label class="form-label fw-bold small text-muted mb-0"
-                            style="text-transform:uppercase;letter-spacing:1px;">Password</label>
-                        <a href="#" style="font-size:.8rem;color:var(--primary-neon);">Forgot Password?</a>
-                    </div>
+                    <label class="form-label fw-bold small text-muted mb-1"
+                        style="text-transform:uppercase;letter-spacing:1px;">Password</label>
                     <input type="password" class="form-control form-control-premium" id="loginPassword"
                         placeholder="••••••••" required autocomplete="current-password">
+                    <div class="text-end mt-2">
+                        <a href="#" style="font-size:.8rem;color:var(--primary-neon);">Forgot Password?</a>
+                    </div>
                 </div>
                 <div class="form-check mb-4">
                     <input class="form-check-input" type="checkbox" id="rememberCheck">

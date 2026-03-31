@@ -30,7 +30,7 @@
         }
 
         [data-theme=light] .page-hero::before {
-            background: linear-gradient(to bottom, rgba(240, 244, 255, .55), rgba(240, 244, 255, .88));
+            background: linear-gradient(to bottom, rgba(240, 244, 255, .75), rgba(240, 244, 255, .95));
         }
 
         .page-hero .container {
@@ -109,7 +109,7 @@
                     Our <span
                         style="background:var(--grad-neon);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Story</span>
                 </h1>
-                <p class="col-lg-6 mx-auto reveal delay-2" style="color:var(--text-subtle);font-size:1.05rem;">Born
+                <p class="col-lg-6 mx-auto reveal delay-2" style="color:var(--text-muted);font-size:1.05rem;">Born
                     from a passion for anime and the art of making the fictional real.</p>
             </div>
         </section>
@@ -182,6 +182,78 @@
                             <h4 class="fw-bold mb-3">Community</h4>
                             <p class="text-muted">We're a community-first studio. From Discord design sessions to free
                                 blueprint drops, we believe the best props are made together, not in isolation.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Methodology FAQs — first 4 visible, rest hidden until "View More" -->
+                <div class="mt-5">
+                    <h4 class="fw-bold text-center mb-4" style="font-family:'Outfit',sans-serif;">Frequently Asked — Methodology</h4>
+                    <div class="col-lg-9 mx-auto" id="methodologyFaqList">
+                        <!-- FAQ item 1 -->
+                        <div class="faq-methodology-item mb-3" style="border:1px solid var(--border-color);border-radius:var(--border-radius-md);overflow:hidden;">
+                            <button class="faq-btn" data-bs-toggle="collapse" data-bs-target="#mfaq1" aria-expanded="false" style="background:transparent;border:none;padding:1.2rem 1.5rem;width:100%;text-align:left;font-weight:700;color:var(--text-main);display:flex;justify-content:space-between;align-items:center;gap:1rem;cursor:pointer;font-size:.96rem;">
+                                How do you ensure source accuracy on every prop?<i class="bi bi-plus-lg" style="color:var(--primary-neon);transition:transform .3s;flex-shrink:0;"></i>
+                            </button>
+                            <div id="mfaq1" class="collapse">
+                                <div style="padding:0 1.5rem 1.2rem;color:var(--text-muted);font-size:.93rem;line-height:1.8;">We use a combination of official reference art, fan-submitted measurements, and photogrammetry scans to create a master blueprint before any fabrication begins.</div>
+                            </div>
+                        </div>
+                        <!-- FAQ item 2 -->
+                        <div class="faq-methodology-item mb-3" style="border:1px solid var(--border-color);border-radius:var(--border-radius-md);overflow:hidden;">
+                            <button class="faq-btn" data-bs-toggle="collapse" data-bs-target="#mfaq2" aria-expanded="false" style="background:transparent;border:none;padding:1.2rem 1.5rem;width:100%;text-align:left;font-weight:700;color:var(--text-main);display:flex;justify-content:space-between;align-items:center;gap:1rem;cursor:pointer;font-size:.96rem;">
+                                What materials do you prioritize for con-safe builds?<i class="bi bi-plus-lg" style="color:var(--primary-neon);transition:transform .3s;flex-shrink:0;"></i>
+                            </button>
+                            <div id="mfaq2" class="collapse">
+                                <div style="padding:0 1.5rem 1.2rem;color:var(--text-muted);font-size:.93rem;line-height:1.8;">EVA foam for flexible armor, Flexi-Resin for impact-resistant helmets, and carbon fiber cores for blades—all chosen for maximum safety without sacrificing detail.</div>
+                            </div>
+                        </div>
+                        <!-- FAQ item 3 -->
+                        <div class="faq-methodology-item mb-3" style="border:1px solid var(--border-color);border-radius:var(--border-radius-md);overflow:hidden;">
+                            <button class="faq-btn" data-bs-toggle="collapse" data-bs-target="#mfaq3" aria-expanded="false" style="background:transparent;border:none;padding:1.2rem 1.5rem;width:100%;text-align:left;font-weight:700;color:var(--text-main);display:flex;justify-content:space-between;align-items:center;gap:1rem;cursor:pointer;font-size:.96rem;">
+                                How does the community contribute to the build process?<i class="bi bi-plus-lg" style="color:var(--primary-neon);transition:transform .3s;flex-shrink:0;"></i>
+                            </button>
+                            <div id="mfaq3" class="collapse">
+                                <div style="padding:0 1.5rem 1.2rem;color:var(--text-muted);font-size:.93rem;line-height:1.8;">Clients get access to a private Discord channel with weekly build updates, photo logs, and direct messaging with their assigned smith throughout the project.</div>
+                            </div>
+                        </div>
+                        <!-- FAQ item 4 -->
+                        <div class="faq-methodology-item mb-3" style="border:1px solid var(--border-color);border-radius:var(--border-radius-md);overflow:hidden;">
+                            <button class="faq-btn" data-bs-toggle="collapse" data-bs-target="#mfaq4" aria-expanded="false" style="background:transparent;border:none;padding:1.2rem 1.5rem;width:100%;text-align:left;font-weight:700;color:var(--text-main);display:flex;justify-content:space-between;align-items:center;gap:1rem;cursor:pointer;font-size:.96rem;">
+                                Do you prototype before final production?<i class="bi bi-plus-lg" style="color:var(--primary-neon);transition:transform .3s;flex-shrink:0;"></i>
+                            </button>
+                            <div id="mfaq4" class="collapse">
+                                <div style="padding:0 1.5rem 1.2rem;color:var(--text-muted);font-size:.93rem;line-height:1.8;">Yes — for Collector Grade commissions we always produce a scaled prototype for client approval before committing to full-size production.</div>
+                            </div>
+                        </div>
+
+                        <!-- Hidden FAQs (shown after clicking View More) -->
+                        <div id="methodologyFaqExtra" style="display:none;">
+                            <!-- FAQ item 5 -->
+                            <div class="faq-methodology-item mb-3" style="border:1px solid var(--border-color);border-radius:var(--border-radius-md);overflow:hidden;">
+                                <button class="faq-btn" data-bs-toggle="collapse" data-bs-target="#mfaq5" aria-expanded="false" style="background:transparent;border:none;padding:1.2rem 1.5rem;width:100%;text-align:left;font-weight:700;color:var(--text-main);display:flex;justify-content:space-between;align-items:center;gap:1rem;cursor:pointer;font-size:.96rem;">
+                                    How do you handle post-con repairs and touch-ups?<i class="bi bi-plus-lg" style="color:var(--primary-neon);transition:transform .3s;flex-shrink:0;"></i>
+                                </button>
+                                <div id="mfaq5" class="collapse">
+                                    <div style="padding:0 1.5rem 1.2rem;color:var(--text-muted);font-size:.93rem;line-height:1.8;">All clients receive a complimentary paint touch-up kit with their prop. For structural repairs, we offer priority service to past clients at discounted rates.</div>
+                                </div>
+                            </div>
+                            <!-- FAQ item 6 -->
+                            <div class="faq-methodology-item mb-3" style="border:1px solid var(--border-color);border-radius:var(--border-radius-md);overflow:hidden;">
+                                <button class="faq-btn" data-bs-toggle="collapse" data-bs-target="#mfaq6" aria-expanded="false" style="background:transparent;border:none;padding:1.2rem 1.5rem;width:100%;text-align:left;font-weight:700;color:var(--text-main);display:flex;justify-content:space-between;align-items:center;gap:1rem;cursor:pointer;font-size:.96rem;">
+                                    Can I request a fully original prop design not based on any IP?<i class="bi bi-plus-lg" style="color:var(--primary-neon);transition:transform .3s;flex-shrink:0;"></i>
+                                </button>
+                                <div id="mfaq6" class="collapse">
+                                    <div style="padding:0 1.5rem 1.2rem;color:var(--text-muted);font-size:.93rem;line-height:1.8;">Absolutely! Original designs are actually some of our favorite builds. You'll work directly with Kenji in a concept session to develop the design from scratch.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- View More button -->
+                        <div class="text-center mt-4" id="methodologyViewMoreWrap">
+                            <button class="btn btn-neon-outline px-5" id="methodologyViewMore" onclick="document.getElementById('methodologyFaqExtra').style.display='block';document.getElementById('methodologyViewMoreWrap').style.display='none';">
+                                <i class="bi bi-chevron-down me-2"></i>View More FAQs
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -309,7 +381,7 @@
                         <div class="row g-3">
                             <div class="col-6">
                                 <div class="glass-card text-center py-4">
-                                    <div class="stat-number" data-target="500">500</div>
+                                    <div class="stat-number" data-target="500" data-suffix="+">500+</div>
                                     <p class="text-muted fw-bold mb-0"
                                         style="font-size:.82rem;text-transform:uppercase;letter-spacing:1px;">Props
                                         Forged</p>
@@ -317,7 +389,7 @@
                             </div>
                             <div class="col-6">
                                 <div class="glass-card text-center py-4">
-                                    <div class="stat-number" data-target="12000">12k+</div>
+                                    <div class="stat-number" data-target="12000" data-suffix="+">12k+</div>
                                     <p class="text-muted fw-bold mb-0"
                                         style="font-size:.82rem;text-transform:uppercase;letter-spacing:1px;">Members
                                     </p>
@@ -325,7 +397,7 @@
                             </div>
                             <div class="col-6">
                                 <div class="glass-card text-center py-4">
-                                    <div class="stat-number" data-target="99">99%</div>
+                                    <div class="stat-number" data-target="99" data-suffix="%">99%</div>
                                     <p class="text-muted fw-bold mb-0"
                                         style="font-size:.82rem;text-transform:uppercase;letter-spacing:1px;">Love Rate
                                     </p>
@@ -333,7 +405,7 @@
                             </div>
                             <div class="col-6">
                                 <div class="glass-card text-center py-4">
-                                    <div class="stat-number" data-target="15">15</div>
+                                    <div class="stat-number" data-target="15" data-suffix="+">15+</div>
                                     <p class="text-muted fw-bold mb-0"
                                         style="font-size:.82rem;text-transform:uppercase;letter-spacing:1px;">Countries
                                     </p>
@@ -387,12 +459,12 @@
         </section>
     </main>
 
-    <footer class="footer py-5 mt-4">
+    <footer class="footer py-5">
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-4 col-md-6">
-                    <a href="index.html" class="text-decoration-none d-inline-block mb-3">
-                        <img src="assets/images/logo.svg" alt="Neon Prop Studio" height="52" style="max-width:200px;">
+                    <a href="../index.html" class="text-decoration-none d-inline-block mb-3">
+                        <img src="../assets/images/logo.svg" alt="Neon Prop Studio" height="52" style="max-width:200px;">
                     </a>
                     <p class="text-muted mb-4" style="font-size:0.95rem;">Elevating the art of cosplay craftsmanship
                         through innovation and dedication. Your vision, forged into reality—one artifact at a time.</p>

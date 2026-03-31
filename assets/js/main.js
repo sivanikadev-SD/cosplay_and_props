@@ -102,6 +102,7 @@
                 if (!entry.isIntersecting) return;
                 const el = entry.target;
                 const target = parseInt(el.getAttribute('data-target'), 10);
+                const suffix = el.getAttribute('data-suffix') || '';
                 const duration = 1800;
                 const step = 16;
                 const increment = target / (duration / step);
@@ -113,7 +114,14 @@
                         current = target;
                         clearInterval(timer);
                     }
-                    el.textContent = Math.floor(current).toLocaleString();
+                    // Format large numbers (e.g. 12000 → 12k)
+                    let display = Math.floor(current);
+                    if (display >= 1000) {
+                        display = (display / 1000).toFixed(display % 1000 === 0 ? 0 : 1) + 'k';
+                    } else {
+                        display = display.toLocaleString();
+                    }
+                    el.textContent = display + suffix;
                 }, step);
 
                 observer.unobserve(el);
