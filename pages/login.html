@@ -111,7 +111,7 @@
                 <button id="theme-toggle" class="btn btn-theme-toggle" aria-label="Toggle Theme"><i
                         class="bi bi-sun-fill"></i></button>
                 <button id="rtl-toggle" class="btn btn-link text-neon fw-bold px-1"
-                    style="font-size:.8rem;letter-spacing:1px;" aria-label="Toggle RTL">RTL</button>
+                    style="font-size:.8rem;letter-spacing:1px;text-decoration: none;" aria-label="Toggle RTL">RTL</button>
             </div>
         </div>
     </nav>
@@ -127,13 +127,17 @@
                 Your Studio</h1>
 
             <!-- Social -->
-            <button class="btn-social mb-3 d-flex align-items-center justify-content-center gap-3">
-                <i class="bi bi-google"></i> Continue with Google
+             <div style="display: flex; gap: 1rem; justify-content: center;">
+            <button class="btn-social d-flex align-items-center justify-content-center gap-3">
+                <i class="bi bi-google"></i>
             </button>
             <button class="btn-social d-flex align-items-center justify-content-center gap-3">
-                <i class="bi bi-discord"></i> Continue with Discord
+                <i class="bi bi-discord"></i>
             </button>
-
+            <button class="btn-social d-flex align-items-center justify-content-center gap-3">
+                <i class="bi bi-apple"></i>
+            </button>
+        </div>
             <div class="divider-or">or</div>
 
             <!-- Login Form -->
@@ -147,8 +151,13 @@
                 <div class="mb-4">
                     <label class="form-label fw-bold small text-muted mb-1"
                         style="text-transform:uppercase;letter-spacing:1px;">Password</label>
-                    <input type="password" class="form-control form-control-premium" id="loginPassword"
-                        placeholder="••••••••" required autocomplete="current-password">
+                    <div class="position-relative">
+                        <input type="password" class="form-control form-control-premium pe-5" id="loginPassword"
+                            placeholder="••••••••" required autocomplete="current-password">
+                        <span class="position-absolute top-50 end-0 translate-middle-y me-3 toggle-password" data-target="loginPassword" style="cursor: pointer; color: var(--text-muted); z-index: 10;">
+                            <i class="bi bi-eye toggle-password-icon"></i>
+                        </span>
+                    </div>
                     <div class="text-end mt-2">
                         <a href="#" style="font-size:.8rem;color:var(--primary-neon);">Forgot Password?</a>
                     </div>

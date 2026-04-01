@@ -4,6 +4,28 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+    // 0. Toggle Password Visibility
+    const togglePasswordBtns = document.querySelectorAll('.toggle-password');
+    togglePasswordBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const targetId = this.getAttribute('data-target');
+            const targetInput = document.getElementById(targetId);
+            const icon = this.querySelector('.toggle-password-icon');
+            
+            if (targetInput && icon) {
+                if (targetInput.type === 'password') {
+                    targetInput.type = 'text';
+                    icon.classList.remove('bi-eye');
+                    icon.classList.add('bi-eye-slash');
+                } else {
+                    targetInput.type = 'password';
+                    icon.classList.remove('bi-eye-slash');
+                    icon.classList.add('bi-eye');
+                }
+            }
+        });
+    });
+
     // 1. Toast Initialization
     const toastEl = document.getElementById('authToast');
     const toastMsg = document.getElementById('toastMessage');
