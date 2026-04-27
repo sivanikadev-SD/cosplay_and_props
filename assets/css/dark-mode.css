@@ -157,3 +157,11 @@
 [data-theme="dark"] .divider-gradient {
     background: linear-gradient(90deg, transparent, var(--primary-neon) 30%, var(--secondary-neon) 70%, transparent);
 }
+
+/* Ensure logo remains vibrant in dark mode */
+[data-theme="dark"] .navbar-brand img,
+[data-theme="dark"] .footer img,
+[data-theme="dark"] .auth-card img,
+[data-theme="dark"] img[src*="logo.svg"] {
+    filter: brightness(1.2) saturate(1.1) drop-shadow(0 0 10px rgba(0, 242, 255, 0.15));
+}
