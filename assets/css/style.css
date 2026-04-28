@@ -234,6 +234,66 @@ a { text-decoration: none; color: inherit; transition: var(--transition-fast); }
     .d-flex.align-items-center.gap-3 { flex-wrap: wrap; gap: 10px !important; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border-color); }
 }
 
+/* ≤ 360px (very small phones — e.g. 325px) navbar fix */
+@media (max-width: 360px) {
+    :root { --nav-height: 60px; }
+
+    .navbar-custom {
+        height: var(--nav-height) !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+    /* tighten the container so brand + toggler fit side-by-side */
+    .navbar-custom .container {
+        padding-inline: 0.75rem !important;
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+
+    /* shrink the logo so it doesn't crowd out the toggle button */
+    .navbar-brand {
+        flex-shrink: 1;
+        min-width: 0;
+        margin-right: auto;
+    }
+    .navbar-brand img {
+        height: 36px !important;
+        max-width: 160px !important;
+        width: auto;
+    }
+
+    /* keep toggler right-aligned and fixed size */
+    .navbar-toggler {
+        flex-shrink: 0;
+        width: 38px !important;
+        height: 38px !important;
+        padding: 0 !important;
+        margin-left: 8px;
+    }
+
+    /* collapsed menu — full-width, comfortable padding */
+    .navbar-collapse {
+        padding: 16px 12px !important;
+        margin-top: 8px !important;
+    }
+
+    .nav-link { padding: 10px 6px !important; font-size: 0.9rem; }
+
+    .d-flex.align-items-center.gap-3 {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 8px !important;
+        width: 100%;
+    }
+
+    .btn-premium, .btn-login {
+        width: 100%;
+        text-align: center;
+    }
+}
+
 /* 1024px navbar alignment fix */
 @media (min-width: 992px) and (max-width: 1199.98px) {
     .nav-link { padding: 8px 6px !important; font-size: 0.72rem; letter-spacing: 0.5px; }
