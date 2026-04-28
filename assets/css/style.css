@@ -215,19 +215,38 @@ a { text-decoration: none; color: inherit; transition: var(--transition-fast); }
    5. MOBILE NAVBAR COLLAPSE
 ================================ */
 @media (max-width: 991.98px) {
-    .navbar-custom { background: var(--nav-scrolled-bg) !important; backdrop-filter: blur(20px); }
+    /* Keep the bar itself at a fixed height — never let it grow */
+    .navbar-custom {
+        background: var(--nav-scrolled-bg) !important;
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        overflow: visible !important; /* let the dropdown escape */
+    }
+
+    /* The container must also allow overflow so the panel can escape */
+    .navbar-custom .container {
+        position: relative;
+    }
+
+    /* Drop the collapse panel BELOW the bar as an overlay */
     .navbar-collapse {
+        position: absolute;
+        top: 100%;          /* sits right below the navbar bar */
+        left: 0;
+        right: 0;
+        z-index: 1049;
         background: var(--bg-main);
         backdrop-filter: blur(30px);
         -webkit-backdrop-filter: blur(30px);
-        margin-top: 12px;
         padding: 20px 24px;
-        border-radius: var(--border-radius-md);
+        border-radius: 0 0 var(--border-radius-md) var(--border-radius-md);
         border: 1px solid var(--border-color);
+        border-top: none;
         box-shadow: var(--shadow-lg);
-        max-height: 85vh;
+        max-height: 80vh;
         overflow-y: auto;
     }
+
     .nav-link { padding: 12px 8px !important; font-size: 0.95rem; border-bottom: 1px solid var(--border-color); }
     .nav-link:last-child { border-bottom: none; }
     .nav-link::after { display: none; }

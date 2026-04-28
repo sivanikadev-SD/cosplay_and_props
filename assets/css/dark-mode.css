@@ -57,6 +57,7 @@
 [data-theme="dark"] .navbar-collapse {
     background: rgba(6, 10, 20, 0.98);
     border-color: var(--glass-border);
+    border-radius: 0 0 var(--border-radius-md) var(--border-radius-md);
     color: var(--text-main);
 }
 

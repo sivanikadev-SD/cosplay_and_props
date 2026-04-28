@@ -170,6 +170,8 @@
 @media (max-width: 991.98px) {
     [dir="rtl"] .navbar-collapse {
         text-align: right;
+        left: 0;
+        right: 0;
     }
 
     [dir="rtl"] .nav-link {
